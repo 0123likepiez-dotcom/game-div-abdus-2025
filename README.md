@@ -1,3 +1,3 @@
 # game-div-abdus-2025
 Game dev assignments
-website: https://0123likepiez-dotcom.github.io/game-div-abdus-2025/index.html
+website: https://github.com/0123likepiez-dotcom/game-div-abdus-2025/blob/main/index.html
