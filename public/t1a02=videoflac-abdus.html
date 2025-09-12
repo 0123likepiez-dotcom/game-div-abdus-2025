@@ -1,18 +1,81 @@
+
 <script>
-function mySquareFunction(){
-let myIn01 = parseFloat(document.getElementById('myNum01').value)
-let myAnswer = myIn01 * myIn01
-document.getElementById('mySpan01').innerHTML = '' +myIn01 + ' squared = ' +myAnswer
-if
+
+
+function mySquareFunction() {
+  let myIn01 = parseFloat(document.getElementById('myNum01').value);
+  myAnswer = myIn01 * myIn01
+  document.getElementById('mySpan01').innerHTML = myIn01 + ' squared = ' + myAnswer;
+  monkey.time = myAnswer/1000
+setTimeout(fadeMonkey, myAnswer)
+ myDecisionFunction()
+showTimeInfo()
 }
+//Decision Function decides whether the number generated is less than 123 or greater than 123
+function myDecisionFunction() {
+  if (myAnswer > 123) {
+    document.getElementById('myDecision').innerHTML = "Number is larger than 123";
+  } else {
+    document.getElementById('myDecision').innerHTML = "Number is less than 123";
+  }
+} const monkey = {
+    time: "yes",
+      };
+//The object monkey stores the time variable which is accessed by another function called ShowTimeInfo to display the time before the monkey png appears
+  function showTimeInfo() {
+    document.getElementById('myObject').innerHTML = monkey.time;
+} function fadeMonkey() {
+    document.getElementById("myImage").style.opacity = "0.75";
+ document.getElementById("goBananas").style.opacity = "1";  
+//The infiniteBananas loop loops the fading image 2113 times but since there's a condition that breaks the loop after 5 repitions it only occurs 5 times
+  } function infiniteBananas(page, loops) {
+  for (let i = 0; i < loops; i++) {
+if (i===5) {
+    break
+}
+    setTimeout(() => {
+      document.getElementById("myImage").style.opacity = "1"
+    }, i*400)
+
+setTimeout(() => {
+      document.getElementById("myImage").style.opacity = "0"
+    }, i*400)
+
+    setTimeout(() => {
+      document.getElementById("myImage").style.opacity = "1"
+    }, i*400+150)
+  }
+} let array = ["x", "this", "is", "an", "array"];
+console.log(array[1])
+console.log(array[2])
+console.log(array[3])
+console.log(array[4])
+console.log(array[5])
+//this array script displays the message "this is an array" in console
+
 </script>
-<h2 align=center>t1a02-video-flac-abdus.html</h2>
 
-Input: <input id="myNum01" type=number value="4"><br>
-Event:<input type=button value="myEvent squares" onclick="{
-mySquareFunction()
-}"><br>
+<h2 align="center">t1a02-video-flac-abdus.html</h2>
+
+Input: <input id="myNum01" type="number" value="4"><br>
+Event: <input type="button" value="myEvent squares" onclick="mySquareFunction()"><br>
+
 <div>
+  Output: <span id="mySpan01">...</span><br>
+  Output Value[DECISION]: <span id="myDecision">...</span><br>
+Time before Monkey Appears[OBJECT]: <span id="myObject">...</span> seconds
+</div>
+<div>
+<img id="myImage" src="https://i.imgflip.com/60vyge.png" width="400px" style="opacity: 0;">
+</div>
 
-Output:<span id="mySpan01">...</span><br>
-Output Value:<span id="mySpan02">...</span>
+<input id="goBananas" type="button" style="width: 140; height: 45; color: red; font-weight: bold; opacity: 0;"value="DONT-CLICK" onclick="infiniteBananas('Hello!', 21123)">
+<h3 id="goBananas"">LOOPS(click it o.o)</h3>
+
+<input id="goBananas" type="button" style="width: 350; height: 30; color: black; font-weight: bold; opacity: 1; border: 0px;"value="check console after clicking myeventsquares[ARRAY]">
+
+
+
+</script>
+
+
