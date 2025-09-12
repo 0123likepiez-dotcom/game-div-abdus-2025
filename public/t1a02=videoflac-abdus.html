@@ -45,13 +45,15 @@ setTimeout(() => {
       document.getElementById("myImage").style.opacity = "1"
     }, i*400+150)
   }
-} let array = ["x", "this", "is", "an", "array"];
-console.log(array[1])
-console.log(array[2])
-console.log(array[3])
-console.log(array[4])
-console.log(array[5])
-//this array script displays the message "this is an array" in console
+} window.onload = function() {
+  let array = ["yes", "this", "is", "an", "array"];
+
+document.getElementById("goBananas1").value = array[1] 
+document.getElementById("goBananas2").value = array[2] 
+document.getElementById("goBananas3").value = array[3] 
+document.getElementById("goBananas4").value = array[4]
+}
+//once the window is loaded it runs the function with the array code being carried out and changing the button values
 
 </script>
 
@@ -72,7 +74,11 @@ Time before Monkey Appears[OBJECT]: <span id="myObject">...</span> seconds
 <input id="goBananas" type="button" style="width: 140; height: 45; color: red; font-weight: bold; opacity: 0;"value="DONT-CLICK" onclick="infiniteBananas('Hello!', 21123)">
 <h3 id="goBananas"">LOOPS(click it o.o)</h3>
 
-<input id="goBananas" type="button" style="width: 350; height: 30; color: black; font-weight: bold; opacity: 1; border: 0px;"value="check console after clicking myeventsquares[ARRAY]">
+<input id="goBananas1" type="button" style="width: 350; height: 30; color: black; font-weight: bold; opacity: 1; border: 0px;"value="yes">
+<input id="goBananas2" type="button" style="width: 350; height: 30; color: black; font-weight: bold; opacity: 1; border: 0px;"value="yes">
+<input id="goBananas3" type="button" style="width: 350; height: 30; color: black; font-weight: bold; opacity: 1; border: 0px;"value="yes">
+<input id="goBananas4" type="button" style="width: 350; height: 30; color: black; font-weight: bold; opacity: 1; border: 0px;"value="yes">
+
 
 
 
