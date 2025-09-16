@@ -77,8 +77,9 @@ Note: If you have a link to an assignment that has not been marked, put "open" a
 <details><summary>Tuesday Sept 16th, 2025</summary>
 
 ### Title
-1.
-1.
+1. learning how to use markdowns which could be defined as HTML shortcuts.
+1. Preparing for the VideoFlac test by going over what I learned
+2. 
 1.
 
 </details>
