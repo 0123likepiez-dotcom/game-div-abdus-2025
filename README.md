@@ -21,9 +21,9 @@ Note: If you have a link to an assignment that has not been marked, put "open" a
 <details ><summary>Monday Sept 8th, 2025</summary>
 
 ### Title
-1.
-1.
-1.
+3.
+3.
+3.
 
 </details>
 
