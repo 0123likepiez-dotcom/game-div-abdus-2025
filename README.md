@@ -108,10 +108,10 @@ Note: If you have a link to an assignment that has not been marked, put "open" a
 
 ---   
 
-<details ><summary>Monday Sept 22nd, 2025</summary>
+<details open ><summary>Monday Sept 22nd, 2025</summary>
 
 ### Title
-1.
+1. Working on assignment T1A03, nearly done.
 1.
 1.
 
