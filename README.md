@@ -4,7 +4,7 @@ website: https://github.com/0123likepiez-dotcom/game-div-abdus-2025/blob/main/pu
 website: file:///C:/Users/2093306/OneDrive%20-%20Mission%20Public%20School%20District/Documents/t1a01-proper-webpage-Abdus.html
 
 
-# School Course GameDev 11-12, Learning Journal for _________________, Semester 1 2025
+# School Course GameDev 11-12, Learning Journal for Abdus-Salaam, Semester 1 2025
 
 
 Note: If you have a link to an assignment that has not been marked, put "open" after the word details inside the tag.
@@ -118,7 +118,7 @@ Note: If you have a link to an assignment that has not been marked, put "open" a
 
 <details open ><summary>Tuesday Sept 23rd, 2025</summary>
 
-### Title
+### Completed Assignment, awaiting marks
 1. Completed Assignment T1A03, awaiting grading
 1. Trying to become more comfortable with Javascript by watching tutorials
 1.
