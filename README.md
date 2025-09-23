@@ -108,20 +108,19 @@ Note: If you have a link to an assignment that has not been marked, put "open" a
 
 ---   
 
-<details open ><summary>Monday Sept 22nd, 2025</summary>
+<details><summary>Monday Sept 22nd, 2025</summary>
 
 ### Title
 1. Working on assignment T1A03, nearly done.
-1.
-1.
+
 
 </details>
 
-<details><summary>Tuesday Sept 23rd, 2025</summary>
+<details open ><summary>Tuesday Sept 23rd, 2025</summary>
 
 ### Title
-1.
-1.
+1. Completed Assignment T1A03, awaiting grading
+1. Trying to become more comfortable with Javascript by watching tutorials
 1.
 
 </details>
