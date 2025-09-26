@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Clicker Game - Main</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f4f8;
+      text-align: center;
+      padding-top: 50px;
+    }
+    .clicker-button {
+      font-size: 24px;
+      padding: 20px 40px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      margin: 20px;
+    }
+    #score {
+      font-size: 32px;
+      margin: 40px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🍪 Cookie Clicker - Main Page</h1>
+  <button class="clicker-button" id="clicker">Click Me!</button>
+  <div id="score">Score: 0</div>
+
+  <br><br>
+  <a href="t1a04-vibe-code-cleaning-duplicate-abdus.html" class="clicker-button">Go to Duplicate Page</a>
+
+  <script>
+    let score = 0;
+    const button = document.getElementById('clicker');
+    const scoreDisplay = document.getElementById('score');
+
+    button.addEventListener('click', () => {
+      score++;
+      scoreDisplay.textContent = 'Score: ' + score;
+    });
+  </script>
+
+</body>
+</html>
