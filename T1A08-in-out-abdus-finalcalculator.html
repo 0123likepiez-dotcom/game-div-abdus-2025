@@ -1,0 +1,67 @@
+<head>
+<title>T1A08-in-out-abdus-calculator.html</title>
+<body style="background-color: #EEF5EC; overflow: hidden; none; height: 100%; width: 100%;">
+</head>
+<h1 align=center style="font-family: arial;">t1a08-in-out-abdus-calculator</h1>
+<br><br><br><br><br>
+
+<div align=center style="border: 5px solid #A8A8A8; transform:translate(-50%,-50%); top: 35%; right: -50%; position: relative; display: flex; border-radius: 25px; width: 375px; height: 700px; justify-content: center; align-items: center; background-color:#EAE7EC ">
+<p style="position: fixed; top: 0%; color: gray;">GrantXLM 8.0 Calculator</p>
+<div align=center style="border: 5px solid #6F95B4; test-align: center; position: fixed; border-radius: 5px; width: 300px; top: 5%; z-index: 4; height: 50px; justify-content: center; align-items: center; background-color: #6F95B4; color: white; display: flex;font-size: 30px; overflow: hidden; justify-content: center; align-items: center; font-family: arial;" id="myDisplay"></div>
+
+<table border="0" cellpadding="5" cellspacing="25" style=" position: relative; top: 7%; background-color: #CFD6DC; border-radius: 5px;">
+<tr>
+  <td style="background-color: #E2E2E2; border-radius: 7px;"><button id="myNum1" onclick="myNumber()" style="background-color: #E2E2E2; border: none; cursor: pointer; color: white; font-size: 30px; color:#829EB5; width: 75px; height: 75px;">1</button></td>
+  <td style="background-color: #E2E2E2; border-radius: 7px;"><button id="myNum2" onclick="myNumber()" style="background-color: #E2E2E2; border: none; cursor: pointer; color: white; font-size: 30px; color:#829EB5; width: 75px; height: 75px;">2</button></td>
+  <td style="background-color: #E2E2E2; border-radius: 7px;"><button id="myNum3" onclick="myNumber()" style="background-color: #E2E2E2; border: none; cursor: pointer; color: white; font-size: 30px; color:#829EB5; width: 75px; height: 75px;">3</button></td>
+</tr>
+
+<tr>
+  <td style="background-color: #E2E2E2; border-radius: 7px;"><button id="myNum4" onclick="myNumber()" style="background-color: #E2E2E2; border: none; cursor: pointer; color: white; font-size: 30px; color:#829EB5; width: 75px; height: 75px;">4</button></td>
+  <td style="background-color: #E2E2E2; border-radius: 7px;"><button id="myNum5" onclick="myNumber()" style="background-color: #E2E2E2; border: none; cursor: pointer; color: white; font-size: 30px; color:#829EB5; width: 75px; height: 75px;">5</button></td>
+  <td style="background-color: #E2E2E2; border-radius: 7px;"><button id="myNum6" onclick="myNumber()" style="background-color: #E2E2E2; border: none; cursor: pointer; color: white; font-size: 30px; color:#829EB5; width: 75px; height: 75px;">6</button></td>
+</tr>
+
+<tr>
+  <td style="background-color: #E2E2E2; border-radius: 7px;"><button id="myNum7" onclick="myNumber()" style="background-color: #E2E2E2; border: none; cursor: pointer; color: white; font-size: 30px; color:#829EB5; width: 75px; height: 75px;">7</button></td>
+  <td style="background-color: #E2E2E2; border-radius: 7px;"><button id="myNum8" onclick="myNumber()" style="background-color: #E2E2E2; border: none; cursor: pointer; color: white; font-size: 30px; color:#829EB5; width: 75px; height: 75px;">8</button></td>
+  <td style="background-color: #E2E2E2; border-radius: 7px;"><button id="myNum9" onclick="myNumber()" style="background-color: #E2E2E2; border: none; cursor: pointer; color: white; font-size: 30px; color:#829EB5; width: 75px; height: 75px;">9</button></td>
+</tr>
+
+<tr>
+  <td style="background-color: #E2E2E2; border-radius: 7px;"><button id="value" style="background-color: #E2E2E2; border: none; cursor: pointer; color: white; font-size: 30px; color:#829EB5; width: 75px; height: 75px;" id="myNum+" onclick="myNumber()">+</button></td>
+  <td style="background-color: #E2E2E2; border-radius: 7px;"><button id="value" style="background-color: #E2E2E2; border: none; cursor: pointer; color: white; font-size: 30px; color:#829EB5; width: 75px; height: 75px;" id="myNum-" onclick="myNumber()">-</button></td>
+  <td style="background-color: #E2E2E2; border-radius: 7px;"><button id="value" style="background-color: #E2E2E2; border: none; cursor: pointer; color: white; font-size: 30px; color:#829EB5; width: 75px; height: 75px;" id="myNum*" onclick="myNumber()">*</button></td>
+</tr>
+
+<tr>
+  <td style="background-color: #E2E2E2; border-radius: 7px;"><button id="value" style="background-color: #E2E2E2; border: none; cursor: pointer; color: white; font-size: 30px; color:#829EB5; width: 75px; height: 75px;" id="myNum/" onclick="myNumber()">/</button></td>
+  <td style="background-color: #E2E2E2; border-radius: 7px;"><button id="myNum0" onclick="myNumber()" style="background-color: #E2E2E2; border: none; cursor: pointer; color: white; font-size: 30px; color:#829EB5; width: 75px; height: 75px;">0</button></td>
+  <td style="background-color: #E2E2E2; border-radius: 7px;"><button id="value" style="background-color: #E2E2E2; border: none; cursor: pointer; color: white; font-size: 30px; color:#829EB5; width: 75px; height: 75px;" onclick="myEvaluate()">=</button></td>
+</tr>
+</table>
+</div>
+
+<div style=" border: 2px solid #829EB5; width: 150px; height: 75px; top: 77%; right: 30%; position: fixed;">
+<button onclick="myNumber()" id="myNum." style="background-color: #E2E2E2; border: none; border: 2px solid #829EB5; cursor: pointer; color: white; font-size: 30px; color:#829EB5; width: 75px; height: 75px; position: fixed;" >.</button><button id="myDELETE" style="background-color: #E2E2E2; border: none; border: 2px solid #829EB5; cursor: pointer; color: white; font-size: 30px; color:#829EB5; width: 75px; height: 75px; position: fixed; transform:translate(100%,0%); " onclick="myDEL()">DEL</button>
+
+<script>
+function myNumber() {
+  const clickedButton = event.target;
+  document.getElementById('myDisplay').innerHTML += clickedButton.innerText;
+
+}
+
+function myEvaluate() {
+myDisplay = document.getElementById('myDisplay').innerHTML;
+try { myResult = eval(myDisplay);
+document.getElementById('myDisplay').innerHTML = myResult;
+} catch(error) { 
+document.getElementById('myDisplay').innerHTML = 'Error';
+}
+}
+
+function myDEL() {
+window.location.reload()
+}
+</script>
