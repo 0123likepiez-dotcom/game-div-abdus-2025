@@ -1,0 +1,102 @@
+<head>
+<body style="background-color: #EEF5EC; overflow: hidden; none; height: 100%; width: 100%;">
+<title>t1a08-in-out-abdus.html</title>
+</head>
+<h1 align=center>t1a08-in-out-abdus.html
+[YOUTUBE REDIRECT]</h1>
+<br><br>
+
+</div>
+<img src="https://static.vecteezy.com/system/resources/thumbnails/021/698/819/original/purple-hexagon-background-hexagonal-cell-pattern-video.jpg" style=" width: 600px; height: 675px; z-index: -2; transform: translate(-50%,-50%); object-fit: cover; position: absolute; left: 50%; top: 42%; border-radius: 50px;">
+<div style="background-color: rgba(0, 0, 0, 0.2); width: 600px; height: 675px; z-index: -1; transform: translate(-50%,-50%); object-fit: cover; position: absolute; left: 50%; top: 42%; border-radius: 50px;"></div>
+<div align=center>
+<div style="color: #F1F1F6; font-size: 24px; font-family: arial;">Input Password Here:</div>
+<input style=" background-color: rgba(110, 113, 157, 0.7); border: 2px solid rgba(110, 113, 157, 0.9); color: white; font-family: arial; font-size: 18px; height: 30px; border-radius: 5px; justify-content: center; align-items: center;" type="text" id="myText1" value="">
+<br><br>
+<span style="color: #F1F1F6; border: 2.5px solid rgba(85, 100, 208); background-color: #7480E3; border-radius: 7px; display: inline-block; overflow: hidden; white-space: nowrap; width: 200px; font-size: 24px; font-family: arial;" id="mySpan1">...</span>
+<br><br><br>
+<button onclick="myChange()" style="height: 25px; width: 200px; background-color: rgba(95, 110, 224); font-size: 20px; color: white; border: none; border-radius: 3px; box-shadow: 3px 3px 15px 0 rgba(0, 0, 0, 0.4); cursor: hand;">Move Text Values</button>
+<br><br><br>
+<div style="color: #F1F1F6; font-size: 20px; font-family: arial;" id="theDiv"></div>
+<br>
+<br><br><br><br>
+<div align=center>
+<p style="color: #F1F1F6; font-size: 24px; font-family: arial;">Confirm Password Here:</p>
+<input style=" background-color: rgba(110, 113, 157, 0.7); border: 2px solid rgba(110, 113, 157, 0.9); color: white; font-family: arial; font-size: 18px; height: 30px; border-radius: 5px; justify-content: center; align-items: center;" type="text" id="myPassword"><br><br><br>
+<button style="background-color: rgba(95, 110, 224); width: 250px; height: 30px; font-size: 20px; color: white; border: none; border-radius: 3px; box-shadow: 3px 3px 15px 0 rgba(0, 0, 0, 0.4); cursor: hand;" onclick="myCheck()">Click to Confirm</button>
+</div>
+</div>
+<div align=center  style=" z-index: 5; translate: transform(-50%,-50%); top: 80%; right: 44.8%; position: fixed;"><input id="myNum01" type=text value="Abdus"><br>
+<span id="mySpan02">...</span></br>
+<button value="Do Stuff" onclick="myDoStuff()">Do Stuff</button><br>
+<input type=button value="Ellis STuff" onclick="document.getElementById('mySpan02').innerHTML = document.getElementById('myNum01').value">
+</div>
+
+
+
+
+<div align=center style="transform: translate(-30%,-95%); top: 20%; position: relative;"><input id="myNum03" type=text value="scramble text"><br>
+<span id="mySpan03">...</span></br>
+<input type=button value="Do Stuff" onclick="myScramble()"><br>
+</div>
+
+<div align=center style="transform: translate(30%,-225%); top: 20%; position: relative;"><input id="myNum04" type=text value="capitalize text"><br>
+<span id="mySpan04">...</span></br>
+<input type=button value="Do Stuff" onclick="myCapitalize()"><br>
+</div>
+<br>
+
+<div style="height: 15vh; width: 100vw;  display: flex; align-items: flex-end; justify-content: center;"><input id="myNum05" type=text value="2+3"><br>
+<span id="mySpan05">...</span></br>
+<input type=button value="Do Eval" onclick="myEval()"><br>
+</div>
+<br>
+
+<script>
+let myVariable = "";
+document.getElementById('theDiv').innerHTML = 'Button Effect Active for 3 Seconds';
+
+function myChange() {
+  const myValue = document.getElementById('myText1').value;
+  document.getElementById('mySpan1').innerHTML = myValue;
+  setTimeout(() => {
+    document.getElementById('mySpan1').innerHTML = '...';
+  }, 3000);
+}
+
+function myCheck() {
+  if (document.getElementById('myPassword').value == document.getElementById('myText1').value) {
+    window.location.replace("https://www.youtube.com");
+  } else { 
+    console.log('inactive');
+    alert('Wrong Password');
+    window.location.reload();
+  }
+}
+
+function myDoStuff() {
+  let myIn = document.getElementById('myNum01');
+  let myOut = document.getElementById('mySpan02');
+  myOut.innerHTML = myIn.value;
+}
+
+function myScramble() {
+  let myScrambleValue = document.getElementById('myNum03').value;
+  let myArray = myScrambleValue.split('');
+  let myScrambledArray = myArray.map(() => {
+    return myArray[Math.floor(Math.random() * myArray.length)];
+  });
+  document.getElementById('mySpan03').innerHTML = myScrambledArray.join('');
+}
+
+function myCapitalize() {
+  let myText = document.getElementById('myNum04').value;
+  let myCapText = myText.toUpperCase();
+  document.getElementById('mySpan04').innerHTML = myCapText;
+}
+function myEval() {
+document.getElementById('mySpan05').innerHTML = eval(document.getElementById('myNum05').value);
+
+}
+</script>
+</body>
