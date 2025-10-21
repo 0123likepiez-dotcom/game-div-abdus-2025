@@ -1,0 +1,60 @@
+<body style="background-color: #E2E9EC;">
+<title>t1a09-variables-Abdus.html</title>
+<h1 align=center>t1a09-variables-abdus</h1>
+<br><br><br><br><br><br><br>
+
+<div align=center>
+
+Are both of your values equal to 3?<br>
+First Value<input type="text" id="myText1"></input><br>
+Second Value<input type="text" id="myText2"></input>
+<br>
+<button onclick="myCalculator()">Click Me To Find out!</button>
+</div><br><br>
+<div align=center>
+Result <div id="myText3"></div>
+</div><br><br><br>
+<div align=center><button onclick="myAction()">Click Me to Glitch Text!</button>
+<input type ="text" id="myHack"></input>
+<button onclick="myEnd()" id="myStop">Click Me to Stop Glitch Text!</button></div>
+<script>
+function myCalculator() {
+let myValue1 = parseInt(document.getElementById('myText1').value);
+var myValue2 = parseInt(document.getElementById('myText2').value);
+const yes = 'even';
+const no = 'odd';
+
+let result1;
+ if (myValue1 % 2) {
+result1 = no;
+} else {
+result1 = yes;
+}
+
+let result2; 
+ if (myValue2 % 2) {
+result2 = no;
+} else {
+result2 = yes;
+}
+
+document.getElementById('myText3').innerHTML = 'Value 1 is ' + result1 + ' while ' + ' Value 2 is ' + result2 + '.'; 
+}
+function myEnd() {
+ location.reload();
+}
+function myAction() {
+for (let i=0; i<1000; i++) { setTimeout(function() {
+  let alphabet = "abcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  let myHack = document.getElementById('myHack').value;
+  let myCharacter = myHack.split('');
+  let myResult = myCharacter.map(function() {
+    return alphabet[Math.floor(Math.random() * alphabet.length)];
+  });
+  document.getElementById('myHack').value = myResult.join('');
+
+}, i*50);
+}
+}
+</script>
+<div align=center>Can you please tell me how I could achieve a higher mark for this assignment please? Thank You!</div>
