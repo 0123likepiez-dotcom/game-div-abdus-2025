@@ -1,0 +1,146 @@
+<h1 align="center">t1a17-objectCrown-abdus</h1>
+<div align="center" style="display: flex; width: 100vw; height: 100vh; justify-content: center; align-items: center;">
+<div id="myCrown" style="background-color: #B2D9DB; height: 50px; width: 150px; border-radius: 10px; justify-content: center; font-family: arial; font-size: 20px; display: flex; align-items: center; position: absolute; left: 75px; bottom: 100px;">Crown</div>
+<button onclick="myCrownTrace()" style="height: 50px; width: 150px; border-radius: 10px; position: absolute; background-color: #DAE6E6; font-family: arial; font-size: 20px; cursor: pointer; top: 20%;">Enable-Trace</button>
+<button onclick="myReset()" style="height: 50px; width: 150px; border-radius: 10px; position: absolute; background-color: #D5CFD2; font-family: arial; font-size: 20px; cursor: pointer; top: 95%;">Reset</button>
+</div>
+<div style="background-color: #EAC9E9; filter: blur(10px); width: 360px; height: 185px; display: flex; justify-content: center; align-items: center; position: absolute; bottom: 78%; border-radius: 15px; z-index: -1;"></div>
+<div style="background-color: #DCB7C8; width: 348px; height: 170px; position: absolute; display: flex; align-items: center; flex-direction: column; border-radius: 15px; z-index: 1; bottom: 78.9%; right: 80.5%;">
+<button onclick="myTrack()" style="height: 75px; width: 75px; border-radius: 10px; position: absolute; background-color: #D5CFD2; font-family: arial; font-size: 20px; cursor: pointer; bottom: 26.5%; right: 5%;">Track Pos</button>
+<p style="position: relative; right: 15%; top: 12%; font-family: arial: font-size: 30px; font-weight: bold;" id="myXPOS">Current XPos: [INACTIVE]</p><br>
+<p style="position: relative; right: 15%; top: 20%; font-family: arial: font-size: 30px; font-weight: bold;" id="myYPOS">Current YPos: [INACTIVE]</p>
+</div>
+
+<script>
+let char = document.getElementById('myCrown');
+let myXRecall = 75;
+let myYRecall = 100;
+
+function leaveTrail(x, y) {
+const dot = document.createElement('div');
+dot.style.position = 'absolute';
+dot.style.left = (x + 75) + 'px';
+dot.style.bottom = y + 'px';
+dot.style.width = '4px';
+dot.style.height = '4px';
+dot.style.borderRadius = '50%';
+dot.style.backgroundColor = '#4A7C7D';
+dot.style.transform = 'translate(-50%,-50%)';
+document.body.appendChild(dot);
+}
+
+function myCrownTrace() {
+for (let i = 0; i < 245; i++) {
+setTimeout(() => {
+myXRecall += 0.8;
+myYRecall += 2.4;
+char.style.left = myXRecall + "px";
+char.style.bottom = myYRecall + "px";
+leaveTrail(myXRecall, myYRecall);
+}, i * 10);
+}
+for (let i = 0; i < 245; i++) {
+setTimeout(() => {
+myXRecall += 0.8;
+myYRecall -= 2.4;
+char.style.left = myXRecall + "px";
+char.style.bottom = myYRecall + "px";
+leaveTrail(myXRecall, myYRecall);
+}, i * 10 + 2450);
+}
+for (let i = 0; i < 245; i++) {
+setTimeout(() => {
+myXRecall += 0.8;
+myYRecall += 2.4;
+char.style.left = myXRecall + "px";
+char.style.bottom = myYRecall + "px";
+leaveTrail(myXRecall, myYRecall);
+}, i * 10 + 2450 * 2);
+}
+for (let i = 0; i < 245; i++) {
+setTimeout(() => {
+myXRecall += 0.8;
+myYRecall -= 2.4;
+char.style.left = myXRecall + "px";
+char.style.bottom = myYRecall + "px";
+leaveTrail(myXRecall, myYRecall);
+}, i * 10 + 2450 * 3);
+}
+for (let i = 0; i < 245; i++) {
+setTimeout(() => {
+myXRecall += 0.8;
+myYRecall += 2.4;
+char.style.left = myXRecall + "px";
+char.style.bottom = myYRecall + "px";
+leaveTrail(myXRecall, myYRecall);
+}, i * 10 + 2450 * 4);
+}
+for (let i = 0; i < 245; i++) {
+setTimeout(() => {
+myXRecall += 0.8;
+myYRecall -= 2.4;
+char.style.left = myXRecall + "px";
+char.style.bottom = myYRecall + "px";
+leaveTrail(myXRecall, myYRecall);
+}, i * 10 + 2450 * 5);
+}
+for (let i = 0; i < 245; i++) {
+setTimeout(() => {
+myXRecall += 0.8;
+myYRecall += 2.4;
+char.style.left = myXRecall + "px";
+char.style.bottom = myYRecall + "px";
+leaveTrail(myXRecall, myYRecall);
+}, i * 10 + 2450 * 6);
+}
+for (let i = 0; i < 245; i++) {
+setTimeout(() => {
+myXRecall += 0.8;
+myYRecall -= 2.4;
+char.style.left = myXRecall + "px";
+char.style.bottom = myYRecall + "px";
+leaveTrail(myXRecall, myYRecall);
+}, i * 10 + 2450 * 7);
+}
+for (let i = 0; i < 75; i++) {
+setTimeout(() => {
+myXRecall += 0;
+myYRecall -= 2.4;
+char.style.left = myXRecall + "px";
+char.style.bottom = myYRecall + "px";
+leaveTrail(myXRecall, myYRecall);
+}, i * 10 + 2450 * 8);
+}
+for (let i = 0; i < 245; i++) {
+setTimeout(() => {
+myXRecall -= 0.8 * 8;
+char.style.left = myXRecall + "px";
+leaveTrail(myXRecall, myYRecall);
+leaveTrail(myXRecall + 1, myYRecall);
+leaveTrail(myXRecall + 2, myYRecall);
+leaveTrail(myXRecall + 3, myYRecall);
+leaveTrail(myXRecall + 7, myYRecall);
+}, i * 10 + 2450 * 9);
+}
+for (let i = 0; i < 75; i++) {
+setTimeout(() => {
+myXRecall += 0;
+myYRecall += 2.4;
+char.style.left = myXRecall + "px";
+char.style.bottom = myYRecall + "px";
+leaveTrail(myXRecall, myYRecall);
+}, i * 10 + 2450 * 10);
+}
+}
+
+function myReset() {
+window.location.reload();
+}
+
+function myTrack() {
+setInterval (() => {
+document.getElementById('myXPOS').innerHTML = 'Current XPos: ' + parseInt(document.getElementById('myCrown').style.left) + 'px';
+document.getElementById('myYPOS').innerHTML = 'Current YPos: ' + parseInt(document.getElementById('myCrown').style.bottom) + 'px';
+}, 200)
+}
+</script>
