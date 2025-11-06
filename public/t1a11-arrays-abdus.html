@@ -1,0 +1,223 @@
+<h1 align="center">t1a11-arrays-fred.html</h1>
+
+<style>
+@keyframes gradientShift {
+  0% {
+background-position: 0% 50%;
+}
+50% {
+background-position: 100% 50%;
+}
+100% {
+background-position: 0% 50%;
+}
+}
+
+.animated-blur {
+width: 300px;
+height: 175px;
+position: absolute;
+border-radius: 10px;
+filter: blur(20px);
+background: linear-gradient(-45deg, #C7B8D6, #D6B8D4, #B8BAD6, #CBB8D6);
+background-size: 400% 400%;
+animation: gradientShift 10s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% {
+background-position: 0% 50%;
+}
+50% {
+background-position: 100% 50%;
+}
+100% {
+background-position: 0% 50%;
+}
+}
+
+.animated-blur2 {
+width: 430px;
+height: 175px;
+position: absolute;
+border-radius: 10px;
+filter: blur(20px);
+background: linear-gradient(-45deg, #C7B8D6, #D6B8D4, #B8BAD6, #CBB8D6);
+background-size: 400% 400%;
+animation: gradientShift 10s ease infinite;
+}
+
+.myDropdown {
+border: none;
+height: 35px;
+width: 175px;
+position: absolute;
+top: 30.5%;
+border-radius: 5px;
+pointer-events: auto; 
+text-align: center;
+font-weight: bold;
+background-color: white;
+color: white;
+cursor: pointer;
+}
+.myButton {
+background-color: #f9f9f9;
+border: none;
+border-radius: 2px;
+cursor: pointer;
+height: 25px;
+transition: background-color 0.3s ease;
+}
+
+.myButton:hover {
+background-color: #635d5b;
+}
+
+</style>
+<body style="background-color: #E3ECF1;">
+<div style="display: flex; flex-direction: column; align-items: flex-start; padding: 25px; width: 300px; height: 175px; justify-content: center; position: absolute;">
+<div class="animated-blur"></div>
+<div style="width: 275px; height: 150px; background-color: #C7B8D6; z-index: 1; position: relative; right: -5%; border-radius: 10px; display: flex; justify-content: right; flex-direction: column; align-items: center;">
+<p style="font-family: arial;">Value Arrays:</p>
+<input id="myValue1" type="number" value="0" min="0" max="4">
+<button onclick="myValueAr()" style="height: 25px; border-radius: 5px; border: none; cursor: pointer; border: 1px #A7B9C4 solid; background-color: #E3ECF1; font-family: arial;">Access Value</button>
+<div id="myDisplay1"style="font-family: arial;">Array[0-4] Value:</div>
+</div>
+</div><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<div style="display: flex; flex-direction: column; align-items: flex-start; padding: 25px; width: 400px; height: 175px; justify-content: center; position: absolute;">
+<div class="animated-blur2"></div>
+<div style="width: 375px; height: 150px; background-color: #C7B8D6; z-index: 1; position: relative; right: -5%; border-radius: 10px; display: flex; justify-content: flex-start; flex-direction: column; align-items: flex-start; padding: 15px;">
+<p style="font-family: arial;">Boolean Arrays:</p>
+<input id="myValue2" type="number" value="0" min="0" max="1">
+<button onclick="myBooleanAr()" style="height: 25px; border-radius: 5px; border: none; cursor: pointer; border: 1px #A7B9C4 solid; background-color: #E3ECF1; font-family: arial;">✅Access Value❌</button>
+<div style="font-family: arial;">Array[0-1]<br>0=false, 1=true,<br> x>1 = undefined</div>
+<div style="font-size: 68.5px; top: -81%; right: -60%; position: relative; background-color: #DEEAE2; border-radius: 10px; text-align: center; height: 100px; display: flex; justify-content: center; align-items: center;"><p id="myDisplay2"style="transform: translate(0%, -3%); position: relative;">‎‎‎‎ ‎ ‎ ‎ ‎ ‎ ‎ </p></div><br>
+</div>
+</div><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<div style="display: flex; flex-direction: column; align-items: flex-start; padding: 25px; width: 400px; height: 175px; justify-content: center; z-index: 5; position: absolute;">
+<div class="animated-blur2"></div>
+<div style="width: 375px; height: 150px; background-color: #C7B8D6; z-index: 1; position: relative; right: -5%; border-radius: 10px; display: flex; justify-content: flex-start; flex-direction: column; align-items: flex-start; padding: 15px;">
+<p style="font-family: arial;">Function Arrays:</p>
+
+<button class="myDropdown" onmouseenter="myAppear()"  onmouseleave="myDisappear()" id="myDown"></button>
+
+<div id="mySelection" style="position: relative; z-index: 5; transform: translate(51%,-10%);">Select Presets</div>
+<button onclick="myFunctionAr()" style="height: 25px; border-radius: 5px; border: none; cursor: pointer; border: 1px #A7B9C4 solid; background-color: #E3ECF1; font-family: arial; position: absolute; top: 70%;">✅Run Preset❌</button>
+
+</div>
+<div onmouseenter="myAppear()"  onmouseleave="myDisappear()" id="myEv" style="position: absolute; opacity: 0%; top: 34.75%; right: 56.75%; width: 125px; height: 100px; background-color: #fffefe; border-radius: 5px; z-index: -20; gap: 7.5px; display: flex; justify-content: center; flex-direction: column; padding: 5px;">
+<button onclick="zero()" class="myButton">Rotate</button>
+<button onclick="one()" class="myButton">Move</button>
+<button onclick="two()" class="myButton">Change Color</button>
+</div>
+</div><br><br><br><br>
+<div id="myTarget" style="width: 70px; height: 70px; background-color: #DEEAE2; font-family: arial; font-weight: bold; left: 300px; z-index: 500; border-radius: 5px; position: absolute; display: flex; justify-content: center; align-items: center;"><p>Object</p></div>
+<br><br><br><br><br><br><br><br><br><br>
+<script>
+//===================================================================
+//                         VALUE ARRAY
+//===================================================================
+
+function myValueAr() {
+let myVal = document.getElementById('myValue1')
+let myAr = ["0= First","1= Yes","2= seven","3= No","4= Last"]
+document.getElementById('myDisplay1').innerHTML = 'Array ' + myAr[myVal.value]
+}
+
+//===================================================================
+//                         BOOLEAN ARRAY
+//===================================================================
+
+function myBooleanAr() {
+let myVal = document.getElementById('myValue2')
+let myAr = [false,true]
+if (myAr[myVal.value] === true) { 
+document.getElementById('myDisplay2').innerHTML = '✅'
+document.getElementById('myDisplay2').style.fontSize = '75px'
+document.getElementById('myDisplay2').style.paddingRight = '0px';
+document.getElementById('myDisplay2').style.paddingLeft = '0px';
+} else if (myVal.value > 1) {
+document.getElementById('myDisplay2').innerHTML = 'undefined'
+document.getElementById('myDisplay2').style.fontSize = '30px'
+document.getElementById('myDisplay2').style.paddingRight = '7.5px';
+document.getElementById('myDisplay2').style.paddingLeft = '7.5px';
+} else {
+document.getElementById('myDisplay2').innerHTML = '❌'
+document.getElementById('myDisplay2').style.fontSize = '75px'
+document.getElementById('myDisplay2').style.paddingRight = '0px';
+document.getElementById('myDisplay2').style.paddingLeft = '0px';
+}
+}
+
+//===================================================================
+//                         FUNCTION ARRAY
+//===================================================================
+let mySecAr = ["myRotate()","myMove()","myRGB()",]
+let myNumb = 300;
+let myNumb2 = 0;
+function myAppear() {
+document.getElementById('myEv').style.opacity = '1';
+document.getElementById('myEv').style.zIndex = '10';
+}
+function myDisappear() {
+document.getElementById('myEv').style.opacity = '0';
+document.getElementById('myEv').style.zIndex = '-10';
+}
+function zero() {
+document.getElementById('myDown').innerHTML = "0"
+document.getElementById('mySelection').innerHTML = "Rotate Object"
+document.getElementById('mySelection').style.transform = "translate(51%,-10%)"
+document.getElementById('myTarget').innerHTML = 'Object'
+}
+function one() {
+document.getElementById('myDown').innerHTML = "1"
+document.getElementById('mySelection').innerHTML = "Move Object"
+document.getElementById('mySelection').style.transform = "translate(51%,-10%)"
+document.getElementById('myTarget').innerHTML = 'Object'
+}
+function two() {
+document.getElementById('myDown').innerHTML = "2"
+document.getElementById('mySelection').style.transform = "translate(51%,-10%)";
+document.getElementById('mySelection').innerHTML = "Change Color"
+document.getElementById('myTarget').innerHTML = 'Object'
+}
+function myFunctionAr() {
+let myValue = document.getElementById('myDown').innerHTML;
+let myAction = document.getElementById('myDown');
+if (parseInt(document.getElementById('myDown').innerHTML) === 0) {
+for (let i=0; i<720; i++) { 
+setTimeout(() => {
+myNumb2 += 0.5;
+document.getElementById('myTarget').style.transform = 'rotate(' + myNumb2 + 'deg)';
+}, i * 3);
+}
+}
+else if (parseInt(document.getElementById('myDown').innerHTML) === 1) {
+for (let i=0; i<750; i++) { 
+setTimeout(() => {
+myNumb += 0.1;
+document.getElementById('myTarget').style.left = myNumb + "px";
+}, i * 1);
+}
+for (let i=0; i<750; i++) { 
+setTimeout(() => {
+myNumb -= 0.1;
+document.getElementById('myTarget').style.left = myNumb + "px";
+}, i * 1 + 750);
+}
+}
+else if (parseInt(document.getElementById('myDown').innerHTML) === 2){
+document.getElementById('myTarget').style.backgroundColor = '#b7d1e2'
+setTimeout(() => {
+
+document.getElementById('myTarget').style.backgroundColor = ' #DEEAE2'
+}, 1500);
+} else {
+document.getElementById('myTarget').innerHTML = 'ERROR'
+}
+}
+
+</script>
