@@ -1,0 +1,96 @@
+<h1 align=center>t2a13-leet-abdus.html</h1>
+
+<li> Ask chatGPT for a beginner friendly javascript Leet code question and make an HTML javascript single file answer without any CSS.
+
+<li> Show your prompt here<br><br><br>
+<p style=" width: 500px; padding: 10px; background-color: #C4B3D2; color: white; border-radius: 5px;">"please give me a beginner friendly javascript Leet code question"</p><br><br><br>
+
+<li> Show the Leet quetion here for list of numbers find the smallest<br><br><br>
+
+<p style=" width: 500px; padding: 10px; background-color: #C4B3D2; color: white; border-radius: 5px;">Given an array of integers nums and an integer target, return the indices of the two numbers such that they add up to target.
+You may assume that each input would have exactly one solution, and you may not use the same element twice.
+You can return the answer in any order.</p> <br><br><br>
+
+<li> Get the code working here.
+<div style="width: 500px; padding: 10px; background-color: #C4B3D2; color: white; border-radius: 5px;">array = <input id="myInputArr" style="border: none;" type="typeof" value="-9,-8,-7,-6,-5,-4,-3,-2,-1,0,1,2,3,4,5,6,7,8,9"><br>
+GOAL: find two numbers that add up to 6</div><br>
+<div style=" width: 500px; padding: 10px; background-color: #C4B3D2; color: white; border-radius: 5px;" id="myDisplay">COMBINATIONS: <br></div>
+<button onclick="mySearch()">Search Combinations</button><button onclick="myReset()">Reset Display</button>
+
+<li> Within the PRE tags show your version of the leet answer without looking at the actual answer. <br>
+
+<pre>
+function mySearch() {
+const myArray = document.getElementById('myInputArr').value.split(',').map(Number)
+const myTarget = 6
+for (let i=0; i<myArray.length; i++) {
+setTimeout(() => {
+let myNum = myArray[i]
+let mySearchMethod = myTarget - myNum
+if (myArray.includes(parseInt(mySearchMethod)) && parseInt(myNum) != parseInt(mySearchMethod)) {
+console.log('Combo= ' + mySearchMethod + '+' + myNum)
+document.getElementById('myDisplay').innerHTML += mySearchMethod + ' + ' + myNum + ' = 6' +'<br>';
+}
+}, 75 * i)
+}
+}
+
+function myReset() {
+window.location.reload()
+}
+</pre>
+Look at each number and see if it is smaller than the next number
+print the smallest number
+
+</pre>
+
+<button onclick="{
+const myDiv = document.getElementById('myDiv01')
+let myTemp = 'Hello'
+let myY = [6, 7, 5, 2, 8]
+
+
+myDiv.innerHTML = myY
+}"> To Div</button> <br>
+
+<div id="myDiv01">...</div>
+<button onclick="mySort()">Sort Numerically</button>
+
+<script>
+let myY = [6, 7, 5, 2, 8]
+function mySort() {
+for (let x=0; x<3; x++) {
+for (let i=1;i<myY.length;i++) {
+setTimeout(() => {
+temp = myY[i]
+temp2 = myY[i - 1] 
+if (myY[i] < myY[i - 1]) {
+const temp = myY[i];
+myY[i] = myY[i - 1];
+myY[i - 1] = temp;
+}
+document.getElementById('myDiv01').innerHTML = myY;
+}, 100 * (x * myY.length + i));
+}
+}
+}
+
+function mySearch() {
+const myArray = document.getElementById('myInputArr').value.split(',').map(Number)
+const myTarget = 6
+for (let i=0; i<myArray.length; i++) {
+setTimeout(() => {
+let myNum = myArray[i]
+let mySearchMethod = myTarget - myNum
+if (myArray.includes(parseInt(mySearchMethod)) && parseInt(myNum) != parseInt(mySearchMethod)) {
+console.log('Combo= ' + mySearchMethod + '+' + myNum)
+document.getElementById('myDisplay').innerHTML += mySearchMethod + ' + ' + myNum + ' = 6' +'<br>';
+}
+}, 75 * i)
+}
+}
+
+function myReset() {
+window.location.reload()
+}
+</script>
