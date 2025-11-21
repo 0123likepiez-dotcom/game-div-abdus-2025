@@ -1,0 +1,100 @@
+<h2 align=center>t1a18-for-loops-abdus.html</h2>
+
+<input id="myNum01" type=number value="4"><br>
+<input type=button value="myEvent squares" onclick="{let myTemp = ''
+document.getElementById('myDiv01').innerHTML = ''
+for (x=0;x<10;x++) {
+if (x % 2) {
+myTemp += x+'third <br>'
+} else {
+myTemp += x + '<br>'
+}
+
+}
+document.getElementById('myDiv01').innerHTML = myTemp
+}"><br>
+
+<div style="position: absolute; left = 0px;" id="myDiv01">...</div>
+<br>
+<div style="position: absolute; left = 0px; top: 115px;" id="myFor">ForLet-Text</div><br>
+<button onclick="myForLoop()">Run</button><br>
+<br><br>
+<div style="position: absolute; left = 0px; top: 175px;" id="myIf">DoWhile+While-Text</div><br>
+<button id="myXButton" onclick="myIfLoop()">Run</button>
+<br><br>
+<div style=" display: flex; align-items: center; width: 85px; height: 40px; border-radius: 10px; background-color: #D6B8CB; color: white; justify-content: center; position: absolute; left: 0px; top: 300px;" id="myIn1"><p>ForInLoop</p></div><br>
+<div style=" display: flex; align-items: center; width: 85px; height: 40px; border-radius: 10px; background-color: #B8C7D6; color: white; justify-content: center; position: absolute; left: 0px; top: 350px;" id="myIn2"><p>ForInLoop</p></div><br><br><br><br><br><br><br><br>
+<button id="myXButton" onclick="myIn()">Run</button>
+<br><br>
+<div style=" display: flex; align-items: center; width: 85px; height: 40px; border-radius: 10px; background-color: #D6B8CB; color: white; justify-content: center; position: absolute; left: 0px; top: 450px;" id="myOf1"><p>ForOfLoop</p></div><br>
+<div style=" display: flex; align-items: center; width: 85px; height: 40px; border-radius: 10px; background-color: #B8C7D6; color: white; justify-content: center; position: absolute; left: 0px; top: 500px;" id="myOf2"><p>ForOfLoop</p></div><br><br><br><br><br>
+<button id="myXButton" onclick="myOf()">Run</button>
+<script>
+let mCheck = false;
+//===============================================================================
+// FOR LET LOOP
+//===============================================================================
+function myForLoop() {
+let myForReal = parseInt(document.getElementById('myFor').style.left) || 0;
+
+for (let i=0;i<100;i++) {
+setTimeout (() => {
+myForReal += 1;
+ document.getElementById('myFor').style.left = myForReal + "px";
+}, i * 10);
+}
+setTimeout(() => {
+document.getElementById('myFor').style.left = "0px";
+}, 1000);
+}
+
+//===============================================================================
+// DO WHILE LOOP
+//===============================================================================
+myUpdate = 0;
+function myIfLoop(){
+do {
+forIf()
+} while(false);
+}
+function forIf() {
+myUpdate +=10;
+let myDoc = document.getElementById('myIf');
+myDoc.style.left = myUpdate + "px";
+  setInterval(() => {
+if (parseInt(myDoc.style.left) === 100) {
+myDoc.style.left = "0px";
+myUpdate = 0;
+}
+}, 100);
+}
+//===============================================================================
+// FOR IN LOOP
+//===============================================================================
+function myIn() {
+  let myValues = { Val1: document.getElementById('myIn1'), Val2: document.getElementById('myIn2') }
+
+for (let key in myValues) {
+let myInter = parseInt(myValues[key].style.left) + 10;
+myValues[key].style.left = myInter + "px";
+if (parseInt(myValues[key].style.left) === 100) {
+myValues[key].style.left = 0 + "px";
+}
+}
+}
+//===============================================================================
+// FOR IN LOOP
+//===============================================================================
+function myOf() {
+  let myValues = [document.getElementById('myOf1'),document.getElementById('myOf2')]
+
+for (let element of myValues) {
+let myInter = parseInt(element.style.left) + 10;
+element.style.left = myInter + "px";
+if (parseInt(element.style.left) === 100) {
+element.style.left = 0 + "px";
+}
+}
+}
+</script>
+
