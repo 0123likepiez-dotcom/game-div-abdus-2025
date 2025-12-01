@@ -32,6 +32,12 @@ animation: mySway 3s infinite ease-in-out;
 <div style="position: absolute; background-color: white; width: 750px; height: 675px; top: 7vh; left: 85.7vw; z-index: 100;">
 </div>
 <button id="myButton" onclick="myPLY()" style="transform: translate(-10%, -120%); position: absolute; z-index: 150; width: 200px; height: 50px; border: none; cursor: pointer; border-radius: 5px;">Play Cactus Run!</button>
+<div align="center" id="myTUT" style="width: 20%; height: 25%; position: absolute; border-radius: 5px; display: flex; justify-content: center; align-items: center; flex-direction: column; background-color: #DBE0E9; z-index: 500; top: 10%; right: 40.75%;">
+<p style="position: absolute; z-index: 250; font-family: 'Jersey 25', sans-serif; font-weight: 40; font-style: normal; font-size: 24px; top: 5%;">Controls</p>
+<p style="position: absolute; z-index: 250; font-family: 'Jersey 25', sans-serif; font-weight: 40; font-style: normal; font-size: 24px; top: 35%; right: 70%;">⬆️[Jump]</p>
+<p style="position: absolute; z-index: 250; font-family: 'Jersey 25', sans-serif; font-weight: 40; font-style: normal; font-size: 24px; top: 50%; right: 65.75%;">⬇️[Crouch]</p>
+<p style="position: absolute; background-color: #EEEEEE; border-radius: 5px; width: 50%; padding: 1%; z-index: 250; font-family: 'Jersey 25', sans-serif; font-weight: 40; font-style: normal; font-size: 16px; top: 40%; right: 5%;">A score above 4,500 is possible by using crouch to decrease the duration of your jumps!</p>
+</div>
 <div id="myButton2" style="transform: translate(-10%, -120%); position: absolute; z-index: 149; width: 205px; height: 55px; border: none; background-color: #D0D0D0; filter: blur(25px); cursor: pointer; border-radius: 5px;">Play Cactus Run!</button>
 </div>
 <div id="myScore" style="position: absolute; z-index: 250; font-family: 'Jersey 25', sans-serif; font-weight: 40; font-style: normal; font-size: 24px; right: 17%; top: 9%;">SCORE<br>0000</div>
@@ -44,10 +50,8 @@ animation: mySway 3s infinite ease-in-out;
 <div style="position: absolute; width: 70%; height: 20%; right: 50%; top: 40%; background-color: white; transform:translate(50%, -50%); display: flex; justify-content: center; align-items: center;">
 <p style="font-family: 'Jersey 25'; font-weight: 40; font-style: normal; color: black; font-size: 28px; position: absolute; right: 50%; transform:translate(50%, -10%); white-space: nowrap;" id="myDisplay"></p>
 <button onclick="myRetry()" style=" cursor: pointer; background-image: url(https://0123likepiez-dotcom.github.io/game-div-abdus-2025/public/Retry_Button.PNG.png); border: none; background-size: cover; height:60px; width: 160px; background-repeat: no-repeat; padding: 0px; top: 180%; position: absolute; "></button>
-
 </div>
 </div>
-
 <script>
 function myRetry() {
 window.location.reload()
@@ -59,6 +63,7 @@ let myCSI = 0;
 function myPLY() {
 document.getElementById('myButton').style.zIndex = -500
 document.getElementById('myButton2').style.zIndex = -500
+document.getElementById('myTUT').style.zIndex = -500
 myPlay = true
 
 let myLoSCORE = setInterval(() => {
@@ -257,4 +262,3 @@ document.getElementById('myDino').style.top = '430px';
 }, 5)
 }
 </script>
-
