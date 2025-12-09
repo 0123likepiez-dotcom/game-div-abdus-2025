@@ -1,0 +1,165 @@
+
+<body style="background-color: #423c3a;">
+<h1 style="color: #d0d0d0;"align=center>t2a20-manipulation-fred.html</h1>
+
+String, Array, Object manipulation methods<br>
+<input id="myNum01" type=text value="This is a string" ><br> 
+<span id="mySpan01">...</span><br>
+
+<input type=button value=".toUpperCase()" onclick="{
+    let myIn = document.getElementById('myNum01').value
+    document.getElementById('mySpan01').innerHTML = myIn.toUpperCase()
+}"><br>
+
+<input type=button value=".split() makes and array" onclick="{
+    let myIn = document.getElementById('myNum01').value
+    document.getElementById('mySpan01').innerHTML = myIn.split('')
+}"><br>
+
+<input type=button value="Object.keys() returns array" onclick="{
+    let myObject = {
+        first: 10,
+        second: 'Hello',
+        third: true
+    }
+    let keyArray = Object.keys(myObject)
+    document.getElementById('mySpan01').innerHTML = keyArray
+}"><br>
+
+<div style=" top: 10%; right: 50%; transform: translate(50%, 0%); flex-direction: column; position: absolute; display: flex; justify-content: center; align-items:center;width: 30%; height: 85%; border-radius: 10px; background-color: gray;">
+<p style="font-size: 32px; background-color: white; position: absolute; top: 0%; border-radius: 5px;">
+String/Array Manipulation
+</p>
+<p style="font-size: 16px; background-color: white; position: absolute; top: 10%; border-radius: 5px;">
+Input String
+</p>
+<input id="myINPUT" style=" text-align: center; width: 50%; height: 2%; border: none; position: absolute; top: 15%; cursor: pointer; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+<div style=" position: absolute; display: flex; flex-wrap: wrap;width: 360px; height: 100px;flex-direction: row; top: 18%; justify-content: center; align-items: center; gap: -10px; ">
+<button onclick="myCHANGE()" style="width: 100px; border: none; cursor: pointer; margin: 10px;">Change-Color</button>
+<button onclick="myRANDOMIZE()" style="width: 100px; border: none; cursor: pointer; margin: 10px;">Randomize</button>
+<button onclick="myREVERSE()" style="width: 100px; border: none; cursor: pointer; margin: 10px;">Reverse</button>
+<button onclick="mySPLICE()" style="width: 100px; border: none; cursor: pointer; margin: 10px;">Splice</button>
+<button onclick="myCAPITALIZE()" style="width: 100px; border: none; cursor: pointer; margin: 10px;">Capitalize</button>
+<br><br>
+<button onclick="myRESET()" style=" position: absolute; width: 120px; height: 30px; border-radius: 5px; background-color: #9d4f4f; font-family: arial; font-size: 16px; border: none; cursor: pointer; color: #3f1515; top: 175%;">Reset</button>
+</div>
+<p style="font-size: 16px; background-color: white; position: absolute; top: 50%; border-radius: 5px;">
+Input Addition to Array
+</p>
+<p style="font-size: 16px; background-color: white; position: absolute; top: 60%; border-radius: 5px;">
+Array Result
+</p>
+<input id="myINPUTB" style=" text-align: center; width: 50%; height: 2%; border: none; position: absolute; top: 55%; cursor: pointer; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+<div id="myDISPLAY" style="width: 55%; height: 15%; position: absolute; top: 65%; background-color: #917171; font-family: arial; font-size: 20px; color: #3e0e0e; border-radius: 10px; overflow: hidden; text-align: center;">
+</div>
+<div style=" position: absolute; display: flex; flex-wrap: wrap;width: 800px; height: 100px;flex-direction: row; top: 80%; justify-content: center; align-items: center; gap: -10px; ">
+<button onclick="myHALVE()" style="width: 100px; border: none; cursor: pointer; margin: 5px;">Clear-Half-Array</button>
+<button onclick="myRANDOMIZEB()" style="width: 100px; border: none; cursor: pointer; margin: 5px;">Randomize</button>
+<button onclick="mySUBMIT()" style="width: 100px; border: none; cursor: pointer; margin: 10px;">Submit</button>
+<button onclick="myREVERSEB()" style="width: 100px; border: none; cursor: pointer; margin: 5px;">Reverse</button>
+<button onclick="myREMOVE()" style="width: 100px; border: none; cursor: pointer; margin: 5px;">Remove-Last</button>
+</div>
+</div>
+<div style="top: 30%; right: 15%; transform: translate(50%, 0%); flex-direction: column; position: absolute; display: flex; justify-content: center; align-items:center;width: 15%; height: 45%; border-radius: 10px; background-color: gray;">
+<p style=" position: absolute; top: 5%; font-family: arial; font-size: 20px; color:">INSTRUCTIONS<br><p style=" position: absolute; top: 30%; width: 75%; font-family: arial; font-size: 16px; color:">The String Demo works just fine, it's just that I believe that the Array Demo might be a bit confusing, just input a string into the text box and click the submit button, it will be converted into an array, do this as many times as you please for a large array then use one of the 4 modifier buttons, Thank you and apologies for the bugs!</p></p>
+</div>
+<script>
+function myCHANGE() {
+let myARR = ["red","orange","green","purple","blue"]
+let myVAL = myARR[Math.floor(Math.random() * myARR.length)]
+document.getElementById('myINPUT').style.color = myVAL
+}
+
+function myRANDOMIZE() {
+let myCOUNT = 0
+let myARR2 = []
+let myARR = document.getElementById('myINPUT').value.split('')
+let myVAL = myARR[Math.floor(Math.random() * myARR.length)]
+let myINT = setInterval(() => {
+myCOUNT += 1
+myARR2[myCOUNT] = myARR[Math.floor(Math.random() * myARR.length)]
+if (parseInt(myCOUNT) === parseInt(myARR.length)) {
+let myRESULT = myARR2.join("")
+clearInterval(myINT)
+console.log(myRESULT)
+document.getElementById('myINPUT').value = myRESULT
+let myRES = myCOUNT
+}
+}, 1)
+}
+
+function myREVERSE() {
+let myVAL = document.getElementById('myINPUT').value.split('').reverse().join("")
+document.getElementById('myINPUT').value = myVAL
+}
+
+function mySPLICE() {
+let myVAL = document.getElementById('myINPUT').value.split('').join(" ")
+document.getElementById('myINPUT').value = myVAL
+}
+
+function myCAPITALIZE() {
+let myVAL = document.getElementById('myINPUT').value.toUpperCase()
+document.getElementById('myINPUT').value = myVAL
+}
+
+function myRESET() {
+window.location.reload()
+}
+
+let myARR2 = []
+let myVAL2 = 0
+function mySUBMIT() {
+myVAL2 += 1
+let value = myVAL2 + ': ' + document.getElementById('myINPUTB').value;
+myARR2.push(value);
+document.getElementById('myDISPLAY').innerHTML = myARR2.join(", ");
+}
+
+function myREVERSEB() {
+let myARR = document.getElementById('myDISPLAY').innerHTML.split(',')
+myARR.reverse().join(", ")
+document.getElementById('myDISPLAY').innerHTML = myARR
+}
+
+function myRANDOMIZEB() {
+let myCOUNT = 0
+let myARR2 = []
+let myARR = document.getElementById('myDISPLAY').innerHTML.split(',')
+let myVAL = myARR[Math.floor(Math.random() * myARR.length)]
+let myINT = setInterval(() => {
+myCOUNT += 1
+myARR2[myCOUNT] = myARR[Math.floor(Math.random() * myARR.length)]
+if (parseInt(myCOUNT) === parseInt(myARR.length)) {
+let myRESULT = myARR2.join("")
+clearInterval(myINT)
+console.log(myRESULT)
+document.getElementById('myDISPLAY').innerHTML = myRESULT
+let myRES = myCOUNT
+}
+}, 1)
+}
+
+function myREMOVE() {
+let myARR = document.getElementById('myDISPLAY').innerHTML.split(',')
+myARR.pop()
+document.getElementById('myDISPLAY').innerHTML = myARR 
+}
+
+function myHALVE() {
+let arr = document.getElementById('myDISPLAY').innerHTML.split(',');
+let popsNeeded = Math.ceil(arr.length / 2);
+let count = 0;
+let interval = setInterval(() => {
+arr.pop();
+count++;
+document.getElementById('myDISPLAY').innerHTML = arr.join(", ");
+if (count >= popsNeeded) {
+clearInterval(interval);
+}
+}, 100);
+}
+
+</script>
+
+
