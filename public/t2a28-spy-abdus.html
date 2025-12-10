@@ -1,0 +1,168 @@
+<body style="background-color: #D9D8EF;">
+<h1 align=center>t2a28-spy-fred.html</h1>
+
+<div style="position: absolute; width: 30%; height: 70%; display: flex; justify-content: center; align-items: center; transform: translate(50%, -50%); top: 50%; right: 50%;">
+<div style="position: absolute; display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100%; height: 100%; background-color: #B3B1D2; border-radius: 5px;"><textarea id="myArea01" rows=4 cols=70>Hello how are you</textarea><br> 
+
+
+<input type=button value="encrypt" onclick="{
+   let myTemp = ''
+   myString = document.getElementById('myArea01').value.split('')
+   for (let myLoop=0;   myLoop < myString.length; myLoop++){
+      myTemp = myString[myLoop]
+      if (myString[myLoop] == 'a') {myTemp  = '.'} 
+      if (myString[myLoop] == 'b') {myTemp  = 'h'}
+      if (myString[myLoop] == 'c') {myTemp  = 't'}
+      if (myString[myLoop] == 'd') {myTemp  = '`'}
+      if (myString[myLoop] == 'e') {myTemp  = 'r'}
+      if (myString[myLoop] == 'f') {myTemp  = 'a'}
+      if (myString[myLoop] == 'g') {myTemp  = 'w'}
+      if (myString[myLoop] == 'h') {myTemp  = 'c'}
+      if (myString[myLoop] == 'i') {myTemp  = 'k'}
+      if (myString[myLoop] == 'j') {myTemp  = 'o'}
+      if (myString[myLoop] == 'k') {myTemp  = 'l'}
+      if (myString[myLoop] == 'l') {myTemp  = 'i'}
+      if (myString[myLoop] == 'm') {myTemp  = 'e'}
+      if (myString[myLoop] == 'n') {myTemp  = 'd'}
+      if (myString[myLoop] == 'o') {myTemp  = '1'}
+      if (myString[myLoop] == 'p') {myTemp  = '3'}
+      if (myString[myLoop] == 'q') {myTemp  = '2'}
+      if (myString[myLoop] == 'r') {myTemp  = '4'}
+      if (myString[myLoop] == 's') {myTemp  = '5'}
+      if (myString[myLoop] == 't') {myTemp  = '6'}
+      if (myString[myLoop] == 'u') {myTemp  = '7'}
+      if (myString[myLoop] == 'v') {myTemp  = '9'}
+      if (myString[myLoop] == 'w') {myTemp  = 'g'}
+      if (myString[myLoop] == 'x') {myTemp  = '0'}
+      if (myString[myLoop] == 'y') {myTemp  = '8'}
+      if (myString[myLoop] == 'z') {myTemp  = 'b'}
+      if (myString[myLoop] == '1') {myTemp  = 'y'}
+      if (myString[myLoop] == '2') {myTemp  = 'x'}
+      if (myString[myLoop] == '3') {myTemp  = 'm'}
+      if (myString[myLoop] == '4') {myTemp  = 'n'}
+      if (myString[myLoop] == '5') {myTemp  = 'p'}
+      if (myString[myLoop] == '6') {myTemp  = 'f'}
+      if (myString[myLoop] == '7') {myTemp  = 'j'}
+      if (myString[myLoop] == '8') {myTemp  = 's'}
+      if (myString[myLoop] == '9') {myTemp  = 'v'}
+      if (myString[myLoop] == '0') {myTemp  = 'q'}
+      if (myString[myLoop] == ' ') {myTemp  = 'z'}
+      if (myString[myLoop] == 'A') {myTemp  = '>'} 
+      if (myString[myLoop] == 'B') {myTemp  = 'H'}
+      if (myString[myLoop] == 'C') {myTemp  = 'T'}
+      if (myString[myLoop] == 'D') {myTemp  = '~'}
+      if (myString[myLoop] == 'E') {myTemp  = 'R'}
+      if (myString[myLoop] == 'F') {myTemp  = 'A'}
+      if (myString[myLoop] == 'G') {myTemp  = 'W'}
+      if (myString[myLoop] == 'H') {myTemp  = 'C'}
+      if (myString[myLoop] == 'I') {myTemp  = 'K'}
+      if (myString[myLoop] == 'J') {myTemp  = 'O'}
+      if (myString[myLoop] == 'K') {myTemp  = 'L'}
+      if (myString[myLoop] == 'L') {myTemp  = 'I'}
+      if (myString[myLoop] == 'M') {myTemp  = 'E'}
+      if (myString[myLoop] == 'N') {myTemp  = 'D'}
+      if (myString[myLoop] == 'O') {myTemp  = '!'}
+      if (myString[myLoop] == 'P') {myTemp  = '#'}
+      if (myString[myLoop] == 'Q') {myTemp  = '@'}
+      if (myString[myLoop] == 'R') {myTemp  = '$'}
+      if (myString[myLoop] == 'S') {myTemp  = '%'}
+      if (myString[myLoop] == 'T') {myTemp  = '^'}
+      if (myString[myLoop] == 'U') {myTemp  = '&'}
+      if (myString[myLoop] == 'V') {myTemp  = '('}
+      if (myString[myLoop] == 'W') {myTemp  = 'G'}
+      if (myString[myLoop] == 'X') {myTemp  = ')'}
+      if (myString[myLoop] == 'Y') {myTemp  = '*'}
+      if (myString[myLoop] == 'Z') {myTemp  = 'B'}
+      myString[myLoop] = myTemp
+   }
+   document.getElementById('myArea02').value = myString.join('')
+}"><br><br>
+
+
+<p style="position: absolute; top: 38%;">OUTPUT</p>
+<p style="position: absolute; top: 16.5%;">INPUT</p>
+<p style="position: absolute; top: 60%;">DECRYPTED OUTPUT</p>
+<p style="position: absolute; top: 1%; font-size: arial; font-size: 32px;">My Caesar Cipher</p>
+<textarea id="myArea02" rows=4 cols=70></textarea><br> 
+
+<input type=button value="decrypt" onclick="{
+   let myTemp = ''
+   myString = document.getElementById('myArea02').value.split('')
+   for (let myLoop=0;   myLoop < myString.length; myLoop++){
+      myTemp = myString[myLoop]
+      if (myString[myLoop] == '.') {myTemp  = 'a'} 
+      if (myString[myLoop] == 'h') {myTemp  = 'b'}
+      if (myString[myLoop] == 't') {myTemp  = 'c'}
+      if (myString[myLoop] == '`') {myTemp  = 'd'}
+      if (myString[myLoop] == 'r') {myTemp  = 'e'}
+      if (myString[myLoop] == 'g') {myTemp  = 'w'} 
+      if (myString[myLoop] == 'a') {myTemp  = 'f'}
+      if (myString[myLoop] == 'w') {myTemp  = 'g'}
+      if (myString[myLoop] == 'c') {myTemp  = 'h'}
+      if (myString[myLoop] == 'k') {myTemp  = 'i'}
+      if (myString[myLoop] == 'o') {myTemp  = 'j'}
+      if (myString[myLoop] == 'l') {myTemp  = 'k'}
+      if (myString[myLoop] == 'i') {myTemp  = 'l'}
+      if (myString[myLoop] == 'e') {myTemp  = 'm'}
+      if (myString[myLoop] == 'd') {myTemp  = 'n'}
+      if (myString[myLoop] == '1') {myTemp  = 'o'}
+      if (myString[myLoop] == '3') {myTemp  = 'p'}
+      if (myString[myLoop] == '2') {myTemp  = 'q'}
+      if (myString[myLoop] == '4') {myTemp  = 'r'}
+      if (myString[myLoop] == '5') {myTemp  = 's'}
+      if (myString[myLoop] == '6') {myTemp  = 't'}
+      if (myString[myLoop] == '7') {myTemp  = 'u'}
+      if (myString[myLoop] == '9') {myTemp  = 'v'}
+      if (myString[myLoop] == '0') {myTemp  = 'x'}
+      if (myString[myLoop] == '8') {myTemp  = 'y'}
+      if (myString[myLoop] == 'b') {myTemp  = 'z'}
+      if (myString[myLoop] == 'y') {myTemp  = '1'}
+      if (myString[myLoop] == 'x') {myTemp  = '2'}
+      if (myString[myLoop] == 'm') {myTemp  = '3'}
+      if (myString[myLoop] == 'n') {myTemp  = '4'}
+      if (myString[myLoop] == 'p') {myTemp  = '5'}
+      if (myString[myLoop] == 'f') {myTemp  = '6'}
+      if (myString[myLoop] == 'j') {myTemp  = '7'}
+      if (myString[myLoop] == 's') {myTemp  = '8'}
+      if (myString[myLoop] == 'v') {myTemp  = '9'}
+      if (myString[myLoop] == 'q') {myTemp  = '0'}
+      if (myString[myLoop] == 'z') {myTemp  = ' '}
+      if (myString[myLoop] == '>') {myTemp  = 'A'} 
+      if (myString[myLoop] == 'H') {myTemp  = 'B'}
+      if (myString[myLoop] == 'T') {myTemp  = 'C'}
+      if (myString[myLoop] == '~') {myTemp  = 'D'}
+      if (myString[myLoop] == 'R') {myTemp  = 'E'}
+      if (myString[myLoop] == 'A') {myTemp  = 'F'}
+      if (myString[myLoop] == 'W') {myTemp  = 'G'}
+      if (myString[myLoop] == 'C') {myTemp  = 'H'}
+      if (myString[myLoop] == 'K') {myTemp  = 'I'}
+      if (myString[myLoop] == 'O') {myTemp  = 'J'}
+      if (myString[myLoop] == 'L') {myTemp  = 'K'}
+      if (myString[myLoop] == 'I') {myTemp  = 'L'}
+      if (myString[myLoop] == 'E') {myTemp  = 'M'}
+      if (myString[myLoop] == 'D') {myTemp  = 'N'}
+      if (myString[myLoop] == '!') {myTemp  = 'O'}
+      if (myString[myLoop] == '#') {myTemp  = 'P'}
+      if (myString[myLoop] == '@') {myTemp  = 'Q'}
+      if (myString[myLoop] == '$') {myTemp  = 'R'}
+      if (myString[myLoop] == '%') {myTemp  = 'S'}
+      if (myString[myLoop] == '^') {myTemp  = 'T'}
+      if (myString[myLoop] == '&') {myTemp  = 'U'}
+      if (myString[myLoop] == '(') {myTemp  = 'V'}
+      if (myString[myLoop] == 'G') {myTemp  = 'W'}
+      if (myString[myLoop] == ')') {myTemp  = 'X'}
+      if (myString[myLoop] == '*') {myTemp  = 'Y'}
+      if (myString[myLoop] == 'B') {myTemp  = 'Z'}
+
+      myString[myLoop] = myTemp
+   }
+   document.getElementById('myArea03').value = myString.join('')
+}"><br><br>
+
+
+<textarea id="myArea03" rows=4 cols=70></textarea><br> 
+</div>
+</div>
+<div style="position: absolute; right: 10%; top: 15%; border-radius: 10px; width: 15%; height: 20%; background-color: #B3B1D2; padding: 10px;">
+<p><p style="font-size: 20px; font-family: arial;">Method</p>The Cipher is made by assigning a randomized set of characters to letters and numbers, these scramble the sentence but also represent the pattern that the characters were jumbled in allowing for decryption.</p>
+</div>
