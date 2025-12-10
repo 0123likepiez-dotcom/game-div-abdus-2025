@@ -1,0 +1,330 @@
+
+<body id="myBody" style="background-repeat:repeat; background-size: 80%" background="https://static.vecteezy.com/system/resources/thumbnails/028/241/761/small_2x/creative-background-with-rough-painted-texture-photo.jpg">
+<h1 align=center>t2a24-move-background-fred.html</h1>
+  
+<script>
+   let myGlobalX = 0
+   let myGlobalY = 0
+   let myClock
+   let myFLAG = false
+</script>
+<div style="width: 300px; height: 180px; border-radius: 5px; background-color: gray; display: flex; flex-direction: row; flex-wrap: wrap; justify-content: center; align-items: 1%;"><p style="position: absolute; font-family: arial; font-size: 20px; top: 21%;">Background Movement</p>
+<div style="width: 500px; height: 100px; border-radius: 5px; background-color: gray; display: flex; flex-direction: row; flex-wrap: wrap; justify-content: center; align-items: center;">
+<input id="myButton01" type=button value="Left" onclick="{
+  myTemp = '100px 0px'
+  myGlobalX -= 5
+  myTemp =  myGlobalX + 'px 0px'
+  document.getElementById('myBody').style.backgroundPosition =myTemp
+
+}">
+
+<input id="myButton02" type=button value="Right" onclick="{
+  myTemp = '100px 0px'
+  myGlobalX += 5
+  myTemp =  myGlobalX + 'px 0px'
+  document.getElementById('myBody').style.backgroundPosition =myTemp
+
+}">
+
+<input id="myButton03" type=button value="Down" onclick="{
+  myTemp = '100px 0px'
+  myGlobalX += 5
+  myTemp = '0px ' + myGlobalX + 'px'
+  document.getElementById('myBody').style.backgroundPosition = myTemp
+
+}">
+
+<input id="myButton04" type=button value="Up" onclick="{
+  myTemp = '100px 0px'
+  myGlobalX -= 5
+  myTemp = '0px ' + myGlobalX + 'px'
+  document.getElementById('myBody').style.backgroundPosition = myTemp
+
+}">
+
+<input id="myButton05" type=button value="TopLeft" onclick="{
+  myTemp = '100px 0px'
+  myGlobalX -= 5
+  myGlobalY -= 5
+  myTemp = myGlobalX + 'px ' + myGlobalY + 'px'
+  document.getElementById('myBody').style.backgroundPosition = myTemp
+
+}">
+
+<input id="myButton06" type=button value="TopRight" onclick="{
+  myTemp = '100px 0px'
+  myGlobalX += 5
+  myGlobalY -= 5
+  myTemp = myGlobalX + 'px ' + myGlobalY + 'px'
+  document.getElementById('myBody').style.backgroundPosition = myTemp
+
+}">
+
+<input id="myButton07" type=button value="BottomRight" onclick="{
+  myTemp = '100px 0px'
+  myGlobalX += 5
+  myGlobalY += 5
+  myTemp = myGlobalX + 'px ' + myGlobalY + 'px'
+  document.getElementById('myBody').style.backgroundPosition = myTemp
+
+}">
+<input id="myButton08" type=button value="BottomLeft" onclick="{
+  myTemp = '100px 0px'
+  myGlobalX -= 5
+  myGlobalY += 5
+  myTemp = myGlobalX + 'px ' + myGlobalY + 'px'
+  document.getElementById('myBody').style.backgroundPosition = myTemp
+
+}">
+<input type=button value="Auto Left" onclick="{
+  myClock1 = setInterval(function(){
+     document.getElementById('myButton01').click() 
+if (myFLAG === true) {
+clearInterval(myClock1)
+}
+  }, 100)
+    
+}">
+
+<input type=button value="Auto Right" onclick="{
+  myClock2 = setInterval(function(){
+     document.getElementById('myButton02').click() 
+if (myFLAG === true) {
+clearInterval(myClock2)
+}
+  }, 100)
+    
+}">
+
+<input type=button value="Auto Down" onclick="{
+  myClock3 = setInterval(function(){
+     document.getElementById('myButton03').click() 
+if (myFLAG === true) {
+clearInterval(myClock3)
+}
+  }, 100)
+    
+}">
+
+<input type=button value="Auto Up" onclick="{
+  myClock4 = setInterval(function(){
+     document.getElementById('myButton04').click() 
+if (myFLAG === true) {
+clearInterval(myClock4)
+}
+  }, 100)
+    
+}">
+
+<input type=button value="Auto TopLeft" onclick="{
+  myClock5 = setInterval(function(){
+     document.getElementById('myButton05').click() 
+if (myFLAG === true) {
+clearInterval(myClock5)
+}
+  }, 100)
+    
+}">
+
+<input type=button value="Auto TopRight" onclick="{
+  myClock6 = setInterval(function(){
+     document.getElementById('myButton06').click() 
+if (myFLAG === true) {
+clearInterval(myClock6)
+}
+  }, 100)
+    
+}">
+
+<input type=button value="Auto BottomRight" onclick="{
+  myClock7 = setInterval(function(){
+     document.getElementById('myButton07').click() 
+if (myFLAG === true) {
+clearInterval(myClock7)
+}
+  }, 100)
+    
+}">
+
+<input type=button value="Auto BottomLeft" onclick="{
+  myClock8 = setInterval(function(){
+     document.getElementById('myButton08').click() 
+if (myFLAG === true) {
+clearInterval(myClock8)
+}
+  }, 100)
+   
+}">
+<br><br>
+<button onclick="mySTOP()" style="background-color: #AF5B5A; background-none: cursor: pointer; border: none; height: 25px; width: 200px; border-radius: 5px;">Stop-Auto-Background</button>
+
+</div>
+</div>
+<br><br>
+
+
+<div style="width: 300px; height: 180px; border-radius: 5px; background-color: gray; display: flex; flex-direction: row; flex-wrap: wrap; justify-content: center; align-items: 1%;"><p style="position: absolute; font-family: arial; font-size: 20px; top: 44%;">Image Movement</p>
+<div style="width: 500px; height: 100px; border-radius: 5px; background-color: gray; display: flex; flex-direction: row; flex-wrap: wrap; justify-content: center; align-items: center;">
+
+<input id="myBTN1" type=button value="Left" onclick="{
+  let myIN = parseInt(document.getElementById('myImage01').style.left)
+  myIN -= 5
+  document.getElementById('myImage01').style.left = myIN + 'px'
+}">
+
+<input id="myBTN2" type=button value="Right" onclick="{
+  let myIN = parseInt(document.getElementById('myImage01').style.left)
+  myIN += 5
+  document.getElementById('myImage01').style.left = myIN + 'px'
+}">
+
+<input id="myBTN3" type=button value="Top" onclick="{
+  let myIN = parseInt(document.getElementById('myImage01').style.top)
+  myIN -= 5
+  document.getElementById('myImage01').style.top = myIN + 'px'
+}">
+
+<input id="myBTN4" type=button value="Bottom" onclick="{
+  let myIN = parseInt(document.getElementById('myImage01').style.top)
+  myIN += 5
+  document.getElementById('myImage01').style.top = myIN + 'px'
+}">
+
+<input id="myBTN5" type=button value="BottomRight" onclick="{
+  let myIN = parseInt(document.getElementById('myImage01').style.top)
+  myIN += 5
+  let myIN2 = parseInt(document.getElementById('myImage01').style.left)
+  myIN2 += 5
+  document.getElementById('myImage01').style.top = myIN + 'px'
+document.getElementById('myImage01').style.left = myIN2 + 'px'
+}">
+
+<input id="myBTN6" type=button value="BottomLeft" onclick="{
+  let myIN = parseInt(document.getElementById('myImage01').style.top)
+  myIN += 5
+  let myIN2 = parseInt(document.getElementById('myImage01').style.left)
+  myIN2 -= 5
+  document.getElementById('myImage01').style.top = myIN + 'px'
+document.getElementById('myImage01').style.left = myIN2 + 'px'
+}">
+
+<input id="myBTN7" type=button value="TopLeft" onclick="{
+  let myIN = parseInt(document.getElementById('myImage01').style.top)
+  myIN -= 5
+  let myIN2 = parseInt(document.getElementById('myImage01').style.left)
+  myIN2 -= 5
+  document.getElementById('myImage01').style.top = myIN + 'px'
+document.getElementById('myImage01').style.left = myIN2 + 'px'
+}">
+<input id="myBTN8" type=button value="TopRight" onclick="{
+  let myIN = parseInt(document.getElementById('myImage01').style.top)
+  myIN -= 5
+  let myIN2 = parseInt(document.getElementById('myImage01').style.left)
+  myIN2 += 5
+  document.getElementById('myImage01').style.top = myIN + 'px'
+document.getElementById('myImage01').style.left = myIN2 + 'px'
+}">
+
+<input type=button value="Auto Top" onclick="{
+  myClock1 = setInterval(function(){
+     document.getElementById('myBTN3').click() 
+if (myFLAG2 === true) {
+clearInterval(myClock1)
+}
+  }, 100)
+   
+}">
+
+<input type=button value="Auto Bottom" onclick="{
+  myClock2 = setInterval(function(){
+     document.getElementById('myBTN4').click() 
+if (myFLAG2 === true) {
+clearInterval(myClock2)
+}
+  }, 100)
+   
+}">
+
+<input type=button value="Auto Left" onclick="{
+  myClock3 = setInterval(function(){
+     document.getElementById('myBTN1').click() 
+if (myFLAG2 === true) {
+clearInterval(myClock3)
+}
+  }, 100)
+   
+}">
+
+<input type=button value="Auto Right" onclick="{
+  myClock4 = setInterval(function(){
+     document.getElementById('myBTN2').click() 
+if (myFLAG2 === true) {
+clearInterval(myClock4)
+}
+  }, 100)
+   
+}">
+
+<input type=button value="Auto TopRight" onclick="{
+  myClock5 = setInterval(function(){
+     document.getElementById('myBTN8').click() 
+if (myFLAG2 === true) {
+clearInterval(myClock5)
+}
+  }, 100)
+   
+}">
+
+<input type=button value="Auto TopLeft" onclick="{
+  myClock6 = setInterval(function(){
+     document.getElementById('myBTN7').click() 
+if (myFLAG2 === true) {
+clearInterval(myClock6)
+}
+  }, 100)
+   
+}">
+
+<input type=button value="Auto BottomLeft" onclick="{
+  myClock7 = setInterval(function(){
+     document.getElementById('myBTN6').click() 
+if (myFLAG2 === true) {
+clearInterval(myClock7)
+}
+  }, 100)
+   
+}">
+
+<input type=button value="Auto BottomRight" onclick="{
+  myClock8 = setInterval(function(){
+     document.getElementById('myBTN5').click() 
+if (myFLAG2 === true) {
+clearInterval(myClock8)
+}
+  }, 100)
+   
+}">
+
+<br><br>
+<button onclick="mySTOP2()" style="background-color: #AF5B5A; background-none: cursor: pointer; border: none; height: 25px; width: 200px; border-radius: 5px;">Stop-Auto-Background</button>
+
+</div>
+</div>
+<br><br>
+
+<script>
+function mySTOP() {
+myFLAG = true
+setTimeout(() => {
+myFLAG = false
+}, 150)
+}
+
+function mySTOP2() {
+myFLAG2 = true
+setTimeout(() => {
+myFLAG2 = false
+}, 150)
+}
+</script>
+<img id="myImage01" style="position:relative; width:100px; height:150px; top:0px; left:0px;" src="https://randomfox.ca/images/1.jpg" style="z-index: -5; position: absolute;">
