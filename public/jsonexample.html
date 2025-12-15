@@ -61,3 +61,24 @@ myCheck = true;
 <div style=" width: 30%; height: 90%; position: absolute; display: flex; justify-content: center; align-items: center; right: 50%; transform:translate(50%, -41.2%); border-radius: 5px;">
 <div id="myDiv1" style="position: absolute; text-align: center; top: 25%;"></div>
 </div>
+<button id="myBTN" onclick="myRedirect()" onMouseEnter="AnimationStart()" onMouseLeave="AnimationEnd()" style="height: 30px; font-family: arial; font-weight: bold; font-size: 24px; border-radius: 5px; cursor: pointer; border: none; position: absolute; right: 20%;">GOTO Github API</button>
+
+<style>
+  #myBTN {
+    background-color: #8ea6bb;
+    transition: background-color 0.5s ease;
+  }
+</style>
+
+<script>
+function AnimationStart() {
+document.getElementById('myBTN').style.backgroundColor = "#4a6378";
+}
+
+function AnimationEnd() {
+document.getElementById('myBTN').style.backgroundColor = "#8ea6bb";
+}
+function myRedirect() {
+window.location = "https://github.com/0123likepiez-dotcom/t2a22-api"
+}
+</script>
