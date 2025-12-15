@@ -1,0 +1,63 @@
+ <h1 align="center">t2a22-json-Abdus.html</h1>
+<body style="background-color: #b8ccde; overflow: hidden;">
+  <script>
+let myCheck = true
+setInterval(() => {
+myCheck = true;
+},200)
+    async function fetchData(url){ 
+      const response = await fetch(url);
+      const data =  await response.json();
+      console.log(data);
+
+      const myJson = JSON.stringify(data, null, 2);
+      document.getElementById('myDiv1').innerHTML = `<br><br><br><br><br><br><pre>${myJson}</pre>`;
+
+      document.getElementById('myDiv1').innerHTML += `<img src="${data.image}" alt="Random Image" style="width: 350px; max-height: 300px;">`;   
+}
+
+   
+
+    async function fetchData2(url){
+      document.getElementById('myDiv1').innerHTML = '';
+      const response = await fetch(url);
+      const data =  await response.json();
+      console.log(data);
+
+      const myJson = JSON.stringify(data, null, 2);
+      document.getElementById('myDiv1').innerHTML += `<br><br><br><br><br><br><p>API link:</p><a href="${data.API_link}" value="API">API</a>`;
+      document.getElementById('myDiv1').innerHTML += `<p>Image link:</p><a href="${data.image_link}" value="API">IMG</a>`;
+      document.getElementById('myDiv1').innerHTML += `<p>Image Of:</p> ${data.type}<br>`;
+      document.getElementById('myDiv1').innerHTML += `<img src="${data.image_link}" alt="Random Image" style="width: 350px; max-height: 300px;">`;
+    
+   }
+
+  </script>
+
+
+<div style=" width: 30%; height: 90%; position: absolute; display: flex; justify-content: center; align-items: center; right: 50%; transform:translate(50%, 0%);">
+<div style="position: absolute; display: flex; justify-content: center; align-items: center; background-color: #8ea6bb; width: 100%; height: 100%; border-radius: 10px;">  
+</div>
+</div>
+<div style="position: relative; background-color: #708aa2; border-radius: 5px; width: 30.2%; height: 25%; top: 0%; right: -50%; transform:translate(-50%,0%);"></div>
+
+
+
+<div style="position: relative; z-index: 10; top: -30%;">
+<h1 style="position: relative; z-index: 10; right: -40.5%; transform:translate(0%, 80%);">JSON Data Through GET</h1>
+
+<p style="position: absolute; top: 300%; right: 55%; font-family: arial; font-size: 24px;">TEST API</p><p style="position: absolute; right: 40.6%; top: 300%; font-family: arial; font-size: 24px;">MY API</p>  
+<select style="position: absolute; z-index: 10; top: 480%; right: 55%; width: 100px;" id="mySelect" size="1" onchange="fetchData(this.value)">
+<option></option>
+<option value="https://randomfox.ca/floof/">randomfox</option>
+  </select>
+<select style="position: absolute; z-index: 10; top: 480%; right: 40%; width: 100px;" id="mySelect2" size="1" onchange="fetchData2(this.value)">
+<option></option>
+<option value="https://t2a22-api.onrender.com/space/">Random-Space</option>
+<option value="https://t2a22-api.onrender.com/nature/">Random-Nature</option>
+</select></div></div>
+</div><br><br>
+</div>
+<div style=" width: 30%; height: 90%; position: absolute; display: flex; justify-content: center; align-items: center; right: 50%; transform:translate(50%, -41.2%); border-radius: 5px;">
+<div id="myDiv1" style="position: absolute; text-align: center; top: 25%;"></div>
+</div>
