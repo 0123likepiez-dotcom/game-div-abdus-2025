@@ -1,0 +1,73 @@
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jersey+10&family=Jersey+25&display=swap" rel="stylesheet">
+</head>
+<body style="overflow: hidden; background-color: #758899;">
+<h6> Version 0.0.1 </h6>
+
+<body id="myBody" style="background-repeat:repeat; background-size: 80%" background="myBackground01.jpg">
+
+<h1 align=center>t2a25-game-template-fred.html</h1>
+<br><br><br><br>
+<script>
+//////////////////
+//Game Interface//
+//////////////////
+</script>
+<div style="position: absolute; display: flex; justify-content: center; top: 50%; right: 50%; transform: translate(50%,-50%); align-items: center; width: 100%; height: 100%;">
+<div style="position: absolute; display: flex; justify-content: center; align-items: center; width: 30%; height: 95%; background-color: #5B748A; border-radius: 10px; padding: 0.5%;">
+<img src="https://i.pinimg.com/474x/af/4c/23/af4c2340ceabbcd5053acc53ca9403a2.jpg?nii=t" style="width: 100%; height: 100%; border-radius: 5px;">
+<div style="width: 90%; height: 95%; border-radius: 5px; opacity: 20%; background-color: #F1EEF1; position: absolute;">
+<script>
+//Game Area///
+</script>
+</div>
+<p style="position: absolute; font-family: 'Jersey 10'; font-size: 24px; top: 3%; left: 80%;">Score<br>0000</p>
+</div>
+<script>
+/////////////////////////
+//Welcome to Tetris Box//
+/////////////////////////
+</script>
+<div style="position: absolute; display: flex; justify-content: center; align-items: center; width: 20%; height: 50%; background-color: #5B748A; border-radius: 10px; right: 12.5%; padding: 0.5%; top: 1.5%;">
+
+<div style="position: absolute; width: 60%; background-color: rgb(241, 238, 241, 0.2); padding: 5px; border-radius: 5px; top: 2%; height: 8%; display: flex; justify-content: center; align-items: center;">
+<p style=" position: absolute; font-size: 34px; font-family: 'Jersey 10', sans-serif; font-weight: 100; font-style: normal;">Welcome to Tetris</p>
+</div>
+
+<div id="myControlBox" style=" position: absolute; height: 50%; background-image: url(https://i.pinimg.com/474x/af/4c/23/af4c2340ceabbcd5053acc53ca9403a2.jpg?nii=t); border-radius: 5px; justify-content: center; align-items: center;">
+<div style="position: absolute; background-color: rgb(241, 238, 241, 0.2); padding: 5px; border-radius: 5px; height: 5%; display: flex; justify-content: center; align-items: center; left: 50%; transform: translate(-50%, 10%);">
+<p style=" position: relative; font-size: 24px; font-family: 'Jersey 10', sans-serif; font-weight: 100; font-style: normal;">Controls</p>
+<div style="
+position: absolute;
+  background-color: rgba(241, 238, 241, 0.2);
+  padding: 5px;
+  border-radius: 5px;
+  width: 200%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  top: 290%;
+  height: 600%;
+  justify-content: center;
+  gap: -5px;
+">
+<p style=" margin: 0; position: relative; font-size: 24px; font-family: 'Jersey 10', sans-serif; font-weight: 100; font-style: normal;">LEFT-⬅️</p>
+<p style=" margin: 0; position: relative; font-size: 24px; font-family: 'Jersey 10', sans-serif; font-weight: 100; font-style: normal;">RIGHT-➡️</p>
+<p style=" margin: 0; position: relative; font-size: 24px; font-family: 'Jersey 10', sans-serif; font-weight: 100; font-style: normal;">ROTATE-⬆️</p>
+</div>
+</div>
+<img src="https://i.pinimg.com/474x/af/4c/23/af4c2340ceabbcd5053acc53ca9403a2.jpg?nii=t" style=" width: 100%; height: 100%; border-radius: 5px;">
+<script>
+//Welcome to Tetris Box Code
+setInterval(() => {
+let myCHeight = window.innerHeight * 0.25;
+document.getElementById('myControlBox').style.width = myCHeight + 'px';
+}, 50);
+</script>
+<button onclick="window.location.reload()"style="cursor: pointer; border-radius: 3px; background-color: #1e4568; border: none; position: absolute; left: 50%; top: 120%; transform: translate(-50%, -50%); font-family: 'Jersey 10'; font-size: 24px; width: 90%;">Retry</button>
+</div>
+</body>
