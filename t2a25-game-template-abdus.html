@@ -1,246 +1,197 @@
 <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jersey+10&family=Jersey+25&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jersey+10&family=Jersey+25&display=swap" rel="stylesheet">
 </head>
-
-<body style="overflow: hidden; background-color: #758899;">
-    <h6> Version 0.0.1 </h6>
-
-    <body id="myBody" style="background-repeat:repeat; background-size: 80%" background="myBackground01.jpg">
-
-        <h1 align=center>t2a25-game-template-fred.html</h1>
-        <br><br><br><br>
-
-        <div style="position: absolute; display: flex; justify-content: center; top: 50%; right: 50%; transform: translate(50%,-50%); align-items: center; width: 100%; height: 100%;">
-            <div id="myUI" style="position: absolute; display: flex; justify-content: center; align-items: center; width: 30%; height: 95%; background-color: #5B748A; border-radius: 10px; padding: 0.5%;">
-                <img src="https://i.pinimg.com/474x/af/4c/23/af4c2340ceabbcd5053acc53ca9403a2.jpg?nii=t" style="width: 100%; height: 100%; border-radius: 5px;">
-                <div style="width: 90%; height: 95%; border-radius: 5px; opacity: 20%; background-color: #F1EEF1; position: absolute; z-index: 1;">
-                </div>
-                <div id="myUIBottom" style="width: 90%; border-radius: 5px; height: 5%; position: absolute; background-color: hsl(0, 0%, 0%, 0.5); top: 95%; transform:translate(0%, -50%); z-index: 2;">
-                </div>
-                <p id="myScore" style="position: absolute; font-family: 'Jersey 10'; font-size: 24px; top: 3%; left: 80%; z-index: 5;">Score<br>0000</p>
-            </div>
-
-            <div style="position: absolute; display: flex; justify-content: center; align-items: center; width: 20%; height: 50%; background-color: #5B748A; border-radius: 10px; right: 12.5%; padding: 0.5%; top: 1.5%;">
-
-                <div style="position: absolute; width: 60%; background-color: rgb(241, 238, 241, 0.2); padding: 5px; border-radius: 5px; top: 2%; height: 8%; display: flex; justify-content: center; align-items: center;">
-                    <p style=" position: absolute; font-size: 34px; font-family: 'Jersey 10', sans-serif; font-weight: 100; font-style: normal;">Welcome to Tetris</p>
-                </div>
-
-                <div id="myControlBox" style=" position: absolute; height: 50%; background-image: url(https://i.pinimg.com/474x/af/4c/23/af4c2340ceabbcd5053acc53ca9403a2.jpg?nii=t); border-radius: 5px; justify-content: center; align-items: center;">
-                    <div style="position: absolute; background-color: rgb(241, 238, 241, 0.2); padding: 5px; border-radius: 5px; height: 5%; display: flex; justify-content: center; align-items: center; left: 50%; transform: translate(-50%, 10%);">
-                        <p style=" position: relative; font-size: 24px; font-family: 'Jersey 10', sans-serif; font-weight: 100; font-style: normal;">Controls</p>
-                        <div style="position: absolute; background-color: rgba(241, 238, 241, 0.2); padding: 5px; border-radius: 5px; width: 200%; display: flex; flex-direction: column; align-items: center; left: 50%; transform: translate(-50%, 0%); top: 290%; height: 600%; justify-content: center; gap: -5px;">
-                            <p style=" margin: 0; position: relative; font-size: 24px; font-family: 'Jersey 10', sans-serif; font-weight: 100; font-style: normal;">LEFT-⬅️</p>
-                            <p style=" margin: 0; position: relative; font-size: 24px; font-family: 'Jersey 10', sans-serif; font-weight: 100; font-style: normal;">RIGHT-➡️</p>
-                            <p style=" margin: 0; position: relative; font-size: 24px; font-family: 'Jersey 10', sans-serif; font-weight: 100; font-style: normal;">ROTATE-⬆️</p>
-                        </div>
-                    </div>
-                    <img src="https://i.pinimg.com/474x/af/4c/23/af4c2340ceabbcd5053acc53ca9403a2.jpg?nii=t" style=" width: 100%; height: 100%; border-radius: 5px;">
-                    <script>
-                        setInterval(() => {
-                            let myCHeight = window.innerHeight * 0.25;
-                            document.getElementById('myControlBox').style.width = myCHeight + 'px';
-                        }, 50);
-                    </script>
-                    <button onclick="window.location.reload()" style="cursor: pointer; border-radius: 3px; background-color: #1e4568; border: none; position: absolute; left: 50%; top: 120%; transform: translate(-50%, -50%); font-family: 'Jersey 10'; font-size: 24px; width: 90%;">Retry</button>
-                </div>
-            </div>
-    </body>
-
-    <script>
-        let mySQ = window.innerWidth * 0.3 * 0.9 * (1 / 7);
-        let myActiveFall = false;
-        let COLS = 7;
-        let ROWS = 20;
-        let board = Array.from({
-            length: ROWS
-        }, () => Array(COLS).fill(0));
-        let myDown;
-        let myI;
-        let currentX = 3;
-        let CSCORE = 0;
-
-        function createElement3T() {
-            myActiveFall = true;
-            currentX = 3;
-            let parent = document.createElement("div");
-            parent.className = "Tall3";
-            parent.style.width = mySQ + 'px';
-            parent.style.height = (mySQ * 3) + 'px';
-            parent.style.position = "absolute";
-            parent.style.top = "0px";
-            parent.style.left = (mySQ * currentX) + 'px';
-            parent.style.zIndex = "10";
-
-            for (let i = 0; i < 3; i++) {
-                let child = document.createElement("div");
-                child.className = "box1";
-                child.style.width = mySQ + 'px';
-                child.style.height = mySQ + 'px';
-                child.style.background = "pink";
-                child.style.position = "absolute";
-                child.style.top = (mySQ * i) + "px";
-                child.style.border = "1px solid rgba(0,0,0,0.5)";
-                parent.appendChild(child);
-            }
-
-            document.getElementById('myUI').appendChild(parent);
-            myI = 0;
-
-            myDown = setInterval(() => {
-                myI += mySQ / 10;
-                parent.style.top = myI + 'px';
-                myCheckHit();
-            }, 50);
-        }
-
-        window.addEventListener("keydown", (event) => {
-            let tall = document.querySelector('.Tall3');
-            if (!tall || !myActiveFall) return;
-
-            let ui = document.getElementById("myUI").getBoundingClientRect();
-            let boxes = tall.querySelectorAll('.box1');
-
-            if (event.key === "ArrowLeft") {
-                let canMove = true;
-                boxes.forEach(box => {
-                    let b = box.getBoundingClientRect();
-                    let col = Math.floor((b.left - ui.left + 5) / mySQ) - 1;
-                    let row = Math.floor((b.top - ui.top + 5) / mySQ);
-                    // Decreased move range: column 0 and 1 are now blocked for the left-most edge
-                    if (col < 1 || (row >= 0 && row < ROWS && board[row][col] === 1)) canMove = false;
-                });
-                if (canMove) {
-                    currentX--;
-                    tall.style.left = (currentX * mySQ) + 'px';
-                }
-            } else if (event.key === "ArrowRight") {
-                let canMove = true;
-                boxes.forEach(box => {
-                    let b = box.getBoundingClientRect();
-                    let col = Math.floor((b.left - ui.left + 5) / mySQ) + 1;
-                    let row = Math.floor((b.top - ui.top + 5) / mySQ);
-                    if (col >= COLS || (row >= 0 && row < ROWS && board[row][col] === 1)) canMove = false;
-                });
-                if (canMove) {
-                    currentX++;
-                    tall.style.left = (currentX * mySQ) + 'px';
-                }
-            }
-        });
-
-        // Loop to hide any blocks that exit the play area
-        setInterval(() => {
-            let ui = document.getElementById("myUI").getBoundingClientRect();
-            let floor = document.getElementById('myUIBottom').getBoundingClientRect();
-            
-            document.querySelectorAll('.box1').forEach(box => {
-                let b = box.getBoundingClientRect();
-                // If block is below floor or outside UI vertically, hide it
-                if (b.top > floor.top - 5 || b.bottom < ui.top) {
-                    box.style.opacity = "0";
-                    box.style.visibility = "hidden";
-                }
-            });
-        }, 100);
-
-        setInterval(() => {
-            if (!myActiveFall) createElement3T();
-        }, 2000);
-
-        function myCheckHit() {
-            let piece = document.querySelector('.Tall3');
-            if (!piece) return;
-
-            let ui = document.getElementById("myUI").getBoundingClientRect();
-            let floorRect = document.getElementById('myUIBottom').getBoundingClientRect();
-            let boxes = piece.querySelectorAll('.box1');
-
-            let hit = false;
-
-            boxes.forEach(box => {
-                let b = box.getBoundingClientRect();
-                let col = Math.floor((b.left - ui.left + (mySQ / 2)) / mySQ);
-                let nextRow = Math.floor((b.top - ui.top + mySQ + 5) / mySQ);
-
-                if (b.bottom >= floorRect.top - 5) hit = true;
-                if (nextRow < ROWS && col >= 0 && col < COLS) {
-                    if (board[nextRow][col] === 1) hit = true;
-                }
-            });
-
-            if (hit) {
-                myActiveFall = false;
-                clearInterval(myDown);
-
-                let snapped = Math.round(parseFloat(piece.style.top) / mySQ) * mySQ;
-                piece.style.top = snapped + "px";
-
-                lockPieceToBoard(piece);
-                piece.className = "mFLOOR";
-                piece.querySelectorAll('.box1').forEach(b => {
-                    b.classList.add("mBOX");
-                });
-                checkForFullRows();
-            }
-        }
-
-        function lockPieceToBoard(piece) {
-            let ui = document.getElementById("myUI").getBoundingClientRect();
-            let gameOver = false;
-
-            piece.querySelectorAll('.box1').forEach(box => {
-                let b = box.getBoundingClientRect();
-                let col = Math.round((b.left - ui.left) / mySQ);
-                let row = Math.round((b.top - ui.top) / mySQ);
-
-                if (row >= 0 && row < ROWS && col >= 0 && col < COLS) {
-                    board[row][col] = 1;
-                    box.setAttribute('data-row', row);
-                    if (row <= 1) gameOver = true;
-                }
-            });
-
-            if (gameOver) {
-                alert("Game Over!");
-                window.location.reload();
-            }
-        }
-
-        function checkForFullRows() {
-            for (let r = 0; r < ROWS; r++) {
-                let count = board[r].reduce((a, b) => a + b, 0);
-                if (count >= 6) makeRowTransparent(r);
-            }
-        }
-
-        function makeRowTransparent(row) {
-            document.querySelectorAll('.mBOX').forEach(box => {
-                if (parseInt(box.getAttribute('data-row')) === row) {
-                    box.style.opacity = "0";
-                    box.style.visibility = "hidden";
-                    box.setAttribute('data-cleared', 'true');
-                }
-            });
-
-            CSCORE += 75;
-            document.getElementById('myScore').innerHTML = "Score<br>" + CSCORE.toString().padStart(4, '0');
-
-            board.splice(row, 1);
-            board.unshift(Array(COLS).fill(0));
-
-            document.querySelectorAll('.mFLOOR').forEach(piece => {
-                let currentTop = parseFloat(piece.style.top);
-                let pieceRow = Math.round(currentTop / mySQ);
-                if (pieceRow < row) {
-                    piece.style.top = (currentTop + mySQ) + "px";
-                    piece.querySelectorAll('.mBOX').forEach(box => {
-                        let oldRow = parseInt(box.getAttribute('data-row'));
-                        box.setAttribute('data-row', oldRow + 1);
-                    });
-                }
-            });
-        }
-    </script>
+<body style="overflow: hidden; background-color: #758899; margin: 0; padding: 0;">
+<h6> Version 0.0.1 </h6>
+<div id="myBody" style="background-repeat:repeat; background-size: 80%; background-image: url('myBackground01.jpg');">
+<h1 align=center>t2a25-game-template-fred.html</h1>
+<br><br><br><br>
+<div style="position: absolute; display: flex; justify-content: center; top: 50%; right: 50%; transform: translate(50%,-50%); align-items: center; width: 100%; height: 100%;">
+<div id="myUI" style="position: absolute; display: flex; justify-content: center; align-items: center; width: 30%; height: 95%; background-color: #5B748A; border-radius: 10px; padding: 0.5%;">
+<img src="https://i.pinimg.com/474x/af/4c/23/af4c2340ceabbcd5053acc53ca9403a2.jpg?nii=t" style="width: 100%; height: 100%; border-radius: 5px;">
+<div style="width: 90%; height: 95%; border-radius: 5px; opacity: 20%; background-color: #F1EEF1; position: absolute; z-index: 1;"></div>
+<div id="myUILimitLine" style="width: 90%; height: 2px; position: absolute; background-color: hsl(0, 0%, 0%, 0.5); top: calc(2.5% + (window.innerWidth * 0.3 * 0.9 * (1/7)) * 2); transform:translate(0%, -50%); z-index: 4;"></div>
+<div id="myUIBottom" style="width: 90%; border-radius: 5px; height: 5%; position: absolute; background-color: hsl(0, 0%, 0%, 0.5); top: 95%; transform:translate(0%, -50%); z-index: 2;"></div>
+<p id="myScore" style="position: absolute; font-family: 'Jersey 10'; font-size: 24px; top: 3%; left: 80%; z-index: 5;">Score<br>0000</p>
+</div>
+<div style="position: absolute; display: flex; justify-content: center; align-items: center; width: 20%; height: 50%; background-color: #5B748A; border-radius: 10px; right: 12.5%; padding: 0.5%; top: 1.5%;">
+<div style="position: absolute; width: 60%; background-color: rgb(241, 238, 241, 0.2); padding: 5px; border-radius: 5px; top: 2%; height: 8%; display: flex; justify-content: center; align-items: center;">
+<p style="position: absolute; font-size: 34px; font-family: 'Jersey 10', sans-serif; font-weight: 100; font-style: normal;">Welcome to Tetris</p>
+</div>
+<div id="myControlBox" style="position: absolute; height: 50%; background-image: url(https://i.pinimg.com/474x/af/4c/23/af4c2340ceabbcd5053acc53ca9403a2.jpg?nii=t); border-radius: 5px; justify-content: center; align-items: center;">
+<div style="position: absolute; background-color: rgb(241, 238, 241, 0.2); padding: 5px; border-radius: 5px; height: 5%; display: flex; justify-content: center; align-items: center; left: 50%; transform: translate(-50%, 10%);">
+<p style="position: relative; font-size: 24px; font-family: 'Jersey 10', sans-serif; font-weight: 100; font-style: normal;">Controls</p>
+<div style="position: absolute; background-color: rgba(241, 238, 241, 0.2); padding: 5px; border-radius: 5px; width: 200%; display: flex; flex-direction: column; align-items: center; left: 50%; transform: translate(-50%, 0%); top: 290%; height: 600%; justify-content: center; gap: -5px;">
+<p style="margin: 0; position: relative; font-size: 24px; font-family: 'Jersey 10', sans-serif; font-weight: 100; font-style: normal;">LEFT-⬅️</p>
+<p style="margin: 0; position: relative; font-size: 24px; font-family: 'Jersey 10', sans-serif; font-weight: 100; font-style: normal;">RIGHT-➡️</p>
+<p style="margin: 0; position: relative; font-size: 24px; font-family: 'Jersey 10', sans-serif; font-weight: 100; font-style: normal;">ROTATE-⬆️</p>
+</div>
+</div>
+<img src="https://i.pinimg.com/474x/af/4c/23/af4c2340ceabbcd5053acc53ca9403a2.jpg?nii=t" style="width: 100%; height: 100%; border-radius: 5px;">
+<button onclick="window.location.reload()" style="cursor: pointer; border-radius: 3px; background-color: #1e4568; border: none; position: absolute; left: 50%; top: 120%; transform: translate(-50%, -50%); font-family: 'Jersey 10'; font-size: 24px; width: 90%;">Retry</button>
+</div>
+</div>
+</div>
+</div>
+<script>
+let mySQ = window.innerWidth * 0.3 * 0.9 * (1 / 7);
+let myActiveFall = false;
+let COLS = 7;
+let ROWS = 21; 
+let board = Array.from({ length: ROWS }, () => Array(COLS).fill(0));
+let myDown, myI, currentX, CSCORE = 0, CurrentRotate = 0;
+let currentShapeIndex = -1;
+document.getElementById('myUILimitLine').style.top = (2.5 + (mySQ * 2 / (window.innerHeight * 0.95)) * 100) + "%";
+function spawnBlock() {
+myActiveFall = true;
+currentX = 4; 
+CurrentRotate = 0;
+myI = 0;
+let parent = document.createElement("div");
+parent.className = "Tall3";
+parent.style.position = "absolute";
+parent.style.top = "0px";
+parent.style.left = (mySQ * currentX) + 'px';
+parent.style.zIndex = "10";
+parent.style.transform = "rotate(0deg)";
+let shapes = [ 
+[{t:0, l:0}, {t:1, l:0}, {t:2, l:0}], 
+[{t:0, l:0}, {t:1, l:0}, {t:2, l:0}, {t:2, l:1}],
+[{t:1, l:0}, {t:2, l:0}, {t:1, l:1}, {t:2, l:1}], 
+[{t:1, l:0}, {t:2, l:0}, {t:1, l:1}],   
+[{t:0, l:1}, {t:0, l: 0}, {t:0, l:-1}, {t:-1, l:0}]  
+];
+currentShapeIndex = Math.floor(Math.random() * shapes.length);
+let selectedShape = shapes[currentShapeIndex];
+selectedShape.forEach(pos => {
+let child = document.createElement("div");
+child.className = "box1";
+child.style.width = mySQ + 'px';
+child.style.height = mySQ + 'px';
+child.style.background = "pink";
+child.style.position = "absolute";
+child.style.top = (mySQ * pos.t) + "px";
+child.style.left = (mySQ * pos.l) + "px";
+child.style.border = "1px solid rgba(0,0,0,0.5)";
+parent.appendChild(child);
+});
+document.getElementById('myUI').appendChild(parent);
+myDown = setInterval(() => {
+myI += mySQ / 10;
+parent.style.top = myI + 'px';
+myCheckHit();
+}, 50);
+}
+window.addEventListener("keydown", (event) => {
+let tall = document.querySelector('.Tall3');
+if (!tall || !myActiveFall) return;
+let ui = document.getElementById("myUI").getBoundingClientRect();
+let boxes = tall.querySelectorAll('.box1');
+if (event.key === "ArrowLeft") {
+let canMove = true;
+boxes.forEach(box => {
+let b = box.getBoundingClientRect();
+let col = Math.floor((b.left - ui.left + 5) / mySQ) - 1;
+if (col < 1) canMove = false; 
+});
+if (canMove) { currentX--; tall.style.left = (currentX * mySQ) + 'px'; }
+} 
+else if (event.key === "ArrowRight") {
+let canMove = true;
+boxes.forEach(box => {
+let b = box.getBoundingClientRect();
+let col = Math.floor((b.left - ui.left + 5) / mySQ) + 1;
+if (col >= COLS) canMove = false;
+});
+if (canMove) { currentX++; tall.style.left = (currentX * mySQ) + 'px'; }
+}
+else if (event.key === "ArrowUp") {
+if (currentShapeIndex !== 2 && (currentX + 2 < COLS)) {
+CurrentRotate += 90;
+tall.style.transformOrigin = (mySQ / 2) + "px " + (mySQ / 2) + "px";
+tall.style.transform = "rotate(" + CurrentRotate + "deg)";
+}
+}
+});
+setInterval(() => { if (!myActiveFall) spawnBlock(); }, 2000);
+function myCheckHit() {
+let piece = document.querySelector('.Tall3');
+if (!piece) return;
+let ui = document.getElementById("myUI").getBoundingClientRect();
+let floorRect = document.getElementById('myUIBottom').getBoundingClientRect();
+let boxes = piece.querySelectorAll('.box1');
+let hit = false;
+boxes.forEach(box => {
+let b = box.getBoundingClientRect();
+let col = Math.round((b.left - ui.left) / mySQ);
+let nextRow = Math.floor((b.top - ui.top + mySQ + 2) / mySQ);
+if (b.bottom >= (floorRect.top + mySQ) - 5 || (nextRow < ROWS && board[nextRow][col] === 1)) hit = true;
+});
+if (hit) {
+myActiveFall = false;
+clearInterval(myDown);
+piece.style.top = Math.round(parseFloat(piece.style.top) / mySQ) * mySQ + "px";
+lockPiece(piece);
+}
+}
+function lockPiece(piece) {
+let ui = document.getElementById("myUI").getBoundingClientRect();
+let isGameOver = false;
+piece.querySelectorAll('.box1').forEach(box => {
+let b = box.getBoundingClientRect();
+let col = Math.round((b.left - ui.left) / mySQ);
+let row = Math.round((b.top - ui.top) / mySQ);
+if (row >= 0 && row < ROWS && col >= 0 && col < COLS) {
+board[row][col] = 1;
+box.setAttribute('data-row', row);
+if (row <= 1) isGameOver = true;
+}
+});
+piece.className = "mFLOOR";
+piece.querySelectorAll('.box1').forEach(b => b.classList.add("mBOX"));
+if (isGameOver) {
+alert("Game Over!");
+window.location.reload();
+} else {
+checkForFullRows();
+}
+}
+function checkForFullRows() {
+for (let r = 0; r < ROWS; r++) {
+if (board[r].reduce((a, b) => a + b, 0) >= 6) clearRow(r);
+}
+}
+function clearRow(row) {
+document.querySelectorAll('.mBOX').forEach(box => {
+if (parseInt(box.getAttribute('data-row')) === row) box.remove();
+});
+CSCORE += 100;
+document.getElementById('myScore').innerHTML = "Score<br>" + CSCORE.toString().padStart(4, '0');
+board.splice(row, 1);
+board.unshift(Array(COLS).fill(0));
+document.querySelectorAll('.mBOX').forEach(box => {
+let currentRow = parseInt(box.getAttribute('data-row'));
+if (currentRow < row) {
+let newRow = currentRow + 1;
+box.setAttribute('data-row', newRow);
+let currentTop = parseFloat(box.style.top || 0);
+box.style.top = (currentTop + mySQ) + "px";
+}
+});
+}
+setInterval(() => {
+let myCHeight = window.innerHeight * 0.25;
+let controlBox = document.getElementById('myControlBox');
+if(controlBox) controlBox.style.width = myCHeight + 'px';
+}, 50);
+</script>
+<div id="myLose" style="">
+<div style=" transform: translate(50%, -50%); right: 50%; top: 50%; position: absolute; display: flex; justify-content: center; align-items: center; width: 30%; height: 95%; background-color: #5B748A; border-radius: 10px; padding: 0.5%;">
+<img src="https://i.pinimg.com/474x/af/4c/23/af4c2340ceabbcd5053acc53ca9403a2.jpg?nii=t" style="width: 100%; height: 100%; border-radius: 5px;">
+<div  style="width: 100%; border-radius: 5px; height: 100%; position: absolute; background-color: hsl(0, 0%, 0%, 0.5); top: 50%; transform:translate(0%, -50%); z-index: 2;">
+<div style=" width: 50%; height: 25%; background-color:rgb(171, 181, 192); position: absolute; right: 50%; top: 25%; transform: translate(50%, -50%); border-radius: 10px;"><p style="color:#1e4568; position: absolute; font-family:'Jersey 10'; font-size: 42px; right: 50%; transform: translate(50%, 0%);">You Lose!<p style="color:#1e4568; position: absolute; font-family:'Jersey 10'; font-size: 42px; right: 50%; transform: translate(50%, 0%);">You Lose!</p></div>
+</div>
+</div>
+</body>
