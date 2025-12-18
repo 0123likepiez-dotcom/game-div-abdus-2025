@@ -152,8 +152,7 @@ if (row <= 1) isGameOver = true;
 piece.className = "mFLOOR";
 piece.querySelectorAll('.box1').forEach(b => b.classList.add("mBOX"));
 if (isGameOver) {
-alert("Game Over!");
-window.location.reload();
+document.getElementById('myLose').style.opacity = "100%";
 } else {
 checkForFullRows();
 }
@@ -169,6 +168,7 @@ if (parseInt(box.getAttribute('data-row')) === row) box.remove();
 });
 CSCORE += 100;
 document.getElementById('myScore').innerHTML = "Score<br>" + CSCORE.toString().padStart(4, '0');
+document.getElementById('myFScore').innerHTML = "Score<br>" + CSCORE.toString().padStart(4, '0');
 board.splice(row, 1);
 board.unshift(Array(COLS).fill(0));
 document.querySelectorAll('.mBOX').forEach(box => {
@@ -187,11 +187,20 @@ let controlBox = document.getElementById('myControlBox');
 if(controlBox) controlBox.style.width = myCHeight + 'px';
 }, 50);
 </script>
-<div id="myLose" style="">
+<div id="myLose" style="opacity: 0%;">
 <div style=" transform: translate(50%, -50%); right: 50%; top: 50%; position: absolute; display: flex; justify-content: center; align-items: center; width: 30%; height: 95%; background-color: #5B748A; border-radius: 10px; padding: 0.5%;">
 <img src="https://i.pinimg.com/474x/af/4c/23/af4c2340ceabbcd5053acc53ca9403a2.jpg?nii=t" style="width: 100%; height: 100%; border-radius: 5px;">
 <div  style="width: 100%; border-radius: 5px; height: 100%; position: absolute; background-color: hsl(0, 0%, 0%, 0.5); top: 50%; transform:translate(0%, -50%); z-index: 2;">
-<div style=" width: 50%; height: 25%; background-color:rgb(171, 181, 192); position: absolute; right: 50%; top: 25%; transform: translate(50%, -50%); border-radius: 10px;"><p style="color:#1e4568; position: absolute; font-family:'Jersey 10'; font-size: 42px; right: 50%; transform: translate(50%, 0%);">You Lose!<p style="color:#1e4568; position: absolute; font-family:'Jersey 10'; font-size: 42px; right: 50%; transform: translate(50%, 0%);">You Lose!</p></div>
+<div style=" width: 50%; height: 25%; background-color:rgb(171, 181, 192); position: absolute; right: 50%; top: 25%; transform: translate(50%, -50%); border-radius: 10px;"><p style="color:#1e4568; position: absolute; font-family:'Jersey 10'; font-size: 42px; right: 50%; transform: translate(50%, 0%);">You Lose!<p id="myFScore" style="color:#1e4568; position: absolute; font-family:'Jersey 10'; font-size: 34px; right: 50%; top: 30%; background-color:#0f2131; padding: 3%; width: 90%; transform: translate(50%, 0%);">Final Score<br>SCORE</p></p></p></div>
+<div style=" width: 75%; height: 25%; background-color:rgb(171, 181, 192); position: absolute; right: 50%; top: 80%; transform: translate(50%, -50%); border-radius: 10px;"><p style="color:#1e4568; position: absolute; font-family:'Jersey 10'; font-size: 42px; right: 50%; transform: translate(50%, 0%);">Next?<p style="color:#1e4568; position: absolute; font-family:'Jersey 10'; font-size: 34px; right: 50%; top: 30%; background-color:#0f2131; padding: 3%; width: 75%; height: 20%; display: flex; justify-content: center; align-items: center; transform: translate(50%, 0%);"><button onclick="myNext()" style="padding: 0.5%; background-color:#1e4568; border-radius: 5px; border: none; font-size: 30px; font-family: 'Jersey 10'; color:#F1EEF1; position: absolute; padding: 5px; left: 55%; cursor: pointer;">Next Level</button><button onclick="myRestart()" style="padding: 0.5%; background-color:#1e4568; border-radius: 5px; border: none; font-size: 30px; color:#F1EEF1; position: absolute; right: 55%; padding: 5px; transform: translate(-50%, 0%); cursor: pointer; font-family: 'Jersey 10';">Restart</button></p></p></div>
 </div>
 </div>
+<script>
+function myNext() {
+window.location.href = "https://0123likepiez-dotcom.github.io/game-div-abdus-2025/public/t2a21-collisions-level2-abdus%20-%20Copy%20(2).html";
+}
+function myRestart() {
+window.location.reload();
+}
+</script>
 </body>
