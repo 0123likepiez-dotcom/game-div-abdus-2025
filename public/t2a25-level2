@@ -1,0 +1,265 @@
+<h1 align=center>t2a21 level 2</h1>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jersey+25&display=swap" rel="stylesheet">
+<style>
+.myRt {
+display: inline-block;
+animation: mySway 3s infinite ease-in-out;
+}
+@keyframes mySway {
+0%   { transform: rotate(-5deg); }
+50%  { transform: rotate(5deg); }
+100% { transform: rotate(-5deg); }
+}
+</style>
+<body style="overflow: hidden; width: 100vw; height: 100vh; display: flex; justify-content: center; align-items: center; flex-direction: column;">
+<div id="myBackground" style=" background-image: url(https://0123likepiez-dotcom.github.io/game-div-abdus-2025/public/Copilot_20251121_142321.png); background-size: 70vw 70vh; position: absolute; transform: translate(-0%, -10%); background-color: black; padding: 15px; background-repeat: repeat; height: 70vh; width: 70vw"></div>
+<img id="myDino" src="https://www.pinclipart.com/picdir/big/535-5356407_t-rex-silhouette-clip-art.png" width="50px" style="position: absolute; z-index: 5; top: 430px; right: 70%; ">
+<div id="cactus" style="position: absolute; display: flex; justify-content: center; align-items: center; z-index: 25; flex-direction: row; right: 0px;">
+
+<div id="cactus" class="cactus" style="background-image: url('http://pixelartmaker-data-78746291193.nyc3.digitaloceanspaces.com/image/2d12046580dadb6.png'); position: absolute; right: -1000px; width: 100px; height: 100px; background-size: cover; background-repeat: no-repeat;"></div>
+
+<div id="cactus" class="cactus" style="background-image: url('https://naurok.com.ua/uploads/files/3490087/411292/var-lib-jenkins-workspace-naurok-web-uploads-files-3490087-411292-skretch-proekt-dinozavr-gugl-4-original-png.png'); position: absolute; right: -2010px; top: -55px; width: 150px; height: 100px; background-size: contain; background-repeat: no-repeat;"></div>
+
+<div id="cactus" class="cactus" style="background-image: url('https://chrome-dino.co/wp-content/uploads/2022/10/cactus_3.png'); position: absolute; right: -3010px; width: 150px; height: 100px; background-size: cover; background-repeat: no-repeat;"></div>
+</div>
+
+<div style="position: absolute; background-color: white; width: 750px; height: 675px; top: 7vh; right: 85.3vw; z-index: 100;">
+</div>
+
+<div style="position: absolute; background-color: white; width: 750px; height: 675px; top: 7vh; left: 85.7vw; z-index: 100;">
+</div>
+<button id="myButton" onclick="myPLY()" style="transform: translate(-10%, -120%); position: absolute; z-index: 150; width: 200px; height: 50px; border: none; cursor: pointer; border-radius: 5px;">Play Cactus Run!</button>
+<div align="center" id="myTUT" style="width: 20%; height: 25%; position: absolute; border-radius: 5px; display: flex; justify-content: center; align-items: center; flex-direction: column; background-color: #DBE0E9; z-index: 500; top: 10%; right: 40.75%;">
+<p style="position: absolute; z-index: 250; font-family: 'Jersey 25', sans-serif; font-weight: 40; font-style: normal; font-size: 24px; top: 5%;">Controls</p>
+<p style="position: absolute; z-index: 250; font-family: 'Jersey 25', sans-serif; font-weight: 40; font-style: normal; font-size: 24px; top: 35%; right: 70%;">⬆️[Jump]</p>
+<p style="position: absolute; z-index: 250; font-family: 'Jersey 25', sans-serif; font-weight: 40; font-style: normal; font-size: 24px; top: 50%; right: 65.75%;">⬇️[Crouch]</p>
+<p style="position: absolute; background-color: #EEEEEE; border-radius: 5px; width: 50%; padding: 1%; z-index: 250; font-family: 'Jersey 25', sans-serif; font-weight: 40; font-style: normal; font-size: 16px; top: 40%; right: 5%;">A score above 4,500 is possible by using crouch to decrease the duration of your jumps!</p>
+</div>
+<div id="myButton2" style="transform: translate(-10%, -120%); position: absolute; z-index: 149; width: 205px; height: 55px; border: none; background-color: #D0D0D0; filter: blur(25px); cursor: pointer; border-radius: 5px;">Play Cactus Run!</button>
+</div>
+<div id="myScore" style="position: absolute; z-index: 250; font-family: 'Jersey 25', sans-serif; font-weight: 40; font-style: normal; font-size: 24px; right: 17%; top: 9%;">SCORE<br>0000</div>
+<div id="myLose" style=" opacity: 100%; padding: 15px; top: 7%; height: 70vh; width: 70vw; display: flex; justify-content: center; align-items: center; flex-direction: center;position: absolute; background-color: #CBD9F1; z-index: -500;">
+<h1 align="center" style="font-family: arial; font-size: 80px; position: absolute; top: -5%;">GAME OVER<br><p class="myRt" style="font-family: arial; color: #C8FCAC; font-size: 32px;">Cactus Had Beef With Dino D:</p></h1>
+<div style="position: absolute; justify-content: center; align-items: center; flex-direction: column; width: 20%; height: 60%; background-color: #97A7F9; top: 30%; border-radius: 5px;">
+<div style="position: absolute; justify-content: center; align-items: center; flex-direction: column; width: 105%; height: 105%; filter: blur(30px); z-index: -121; background-color: #97A7F9; top: 0%; right: -2%; border-radius: 5px;">
+</div>
+<p style="color: white; font-family: arial; font-size: 24px; position: absolute; right: 50%; transform:translate(50%, -50%); white-space: nowrap;">HIGH SCORE</p>
+<div style="position: absolute; width: 70%; height: 20%; right: 50%; top: 40%; background-color: white; transform:translate(50%, -50%); display: flex; justify-content: center; align-items: center;">
+<p style="font-family: 'Jersey 25'; font-weight: 40; font-style: normal; color: black; font-size: 28px; position: absolute; right: 50%; transform:translate(50%, -10%); white-space: nowrap;" id="myDisplay"></p>
+<button onclick="myRetry()" style=" cursor: pointer; background-image: url(https://0123likepiez-dotcom.github.io/game-div-abdus-2025/public/Retry_Button.PNG.png); border: none; background-size: cover; height:60px; width: 160px; background-repeat: no-repeat; padding: 0px; top: 180%; position: absolute; "></button>
+</div>
+</div>
+<script>
+function myRetry() {
+window.location.reload()
+}
+let myPlay = false
+let myCOL = false
+let myCScore = 0;
+let myCSI = 0;
+function myPLY() {
+document.getElementById('myButton').style.zIndex = -500
+document.getElementById('myButton2').style.zIndex = -500
+document.getElementById('myTUT').style.zIndex = -500
+myPlay = true
+
+let myLoSCORE = setInterval(() => {
+myCSI += 1
+myCScore += Math.round((1.25**Math.sqrt(Math.sqrt(myCSI))/2) + 1)
+document.getElementById('myScore').innerHTML = 'SCORE' + '<br>' + myCScore
+if (myCOL === true) {
+clearInterval(myLoSCORE)
+}
+}, 50)
+function myHitOther(obj1Id, obj2El) {
+const r1 = document.getElementById(obj1Id).getBoundingClientRect();
+const r2 = obj2El.getBoundingClientRect();
+return !(r1.right - 25 < r2.left ||
+r1.left + 25 > r2.right ||
+r1.bottom - 25 < r2.top ||
+r1.top + 25 > r2.bottom);
+}
+
+function myCheckHit() {
+const dino = document.getElementById('myDino');
+const cactuses = document.querySelectorAll('.cactus');
+cactuses.forEach(cactus => {
+if (myHitOther('myDino', cactus)) {
+
+document.getElementById('myDisplay').innerHTML = myCScore;
+document.getElementById('myLose').style.zIndex = 999;
+myCOL = true
+}
+});
+}
+
+let jumping = false
+function myDN() {
+myInterval = setInterval(() => {
+if (jumping) return
+setTimeout(() => {
+if (!jumping) {
+document.getElementById('myDino').src = "https://www.pinclipart.com/picdir/big/535-5356407_t-rex-silhouette-clip-art.png";
+document.getElementById('myDino').width = 70;
+
+document.getElementById('myDino').style.right = '71%';
+}
+}, 400)
+setTimeout(() => {
+if (!jumping || myPlay === false) {
+document.getElementById('myDino').src = "https://i.pinimg.com/originals/46/03/85/4603853b0ce78e7cd43f4d4f69fbead9.png";
+document.getElementById('myDino').width = 100;
+
+document.getElementById('myDino').style.right = '70%';
+}
+}, 550)
+}, 350)
+}
+myDN()
+let myX2 = 0;
+let myX = 0;
+if (myPlay === true) {
+const cactuses = document.querySelectorAll('.cactus');
+for (let i=0; i<99999; i++) {
+setTimeout(() => {
+cactuses.forEach(cactus => {
+let currentRight = parseInt(cactus.style.right || 0);
+currentRight += (1.25**Math.sqrt(Math.sqrt(i))/2);
+let currentRightB = currentRight + 1.1;
+cactus.style.right = currentRightB + 'px';
+if (currentRight > window.innerWidth + 200) {
+cactus.style.right = '-200px';
+}
+myCheckHit();
+});
+}, 7 * i);
+}
+} else {
+console.log('inactiveCactusMovement')
+}
+
+if (myPlay === true) {
+for (let i=0; i<99999; i++) {
+setTimeout(() => {
+let myX2= 1.25**Math.sqrt(Math.sqrt(i-1))/2 - 1.25**Math.sqrt(Math.sqrt(i))/2
+myX -= (1.25**Math.sqrt(Math.sqrt(i))/2);
+console.log(myX2)
+let currentRightC = myX + 1.1;
+document.getElementById('myBackground').style.backgroundPosition = currentRightC + 'px 0px'
+
+}, 7 * i)
+}
+} else {
+console.log('inactiveBackgroundMovement')
+}
+let myDB = true
+let myCK = true;
+document.addEventListener('keydown', function(myKeyPressU) {
+if (myKeyPressU.code === 'ArrowUp' && myCK === true && myPlay === true) {
+myUp()
+}
+})
+document.addEventListener('keydown', function(myKeyPressD) {
+if (myKeyPressU.code === 'ArrowDown' && myCK === false && myPlay === true) {
+myDown()
+myDB = true
+}
+})
+function myUp() {
+let Kinterval = setInterval(() => {
+if (myDB === false) {
+clearInterval(Kinterval)
+return
+}
+}, 1)
+jumping = true
+clearInterval(myInterval)
+document.getElementById('myDino').style.top = '430px';
+let myNewBase = 0
+let myNewBase2 = 0
+for (let i=0;i<35;i++) {
+if (myDB === false) {
+return
+}
+myCK = false;
+document.getElementById('myDino').src = "https://i.pinimg.com/originals/46/03/85/4603853b0ce78e7cd43f4d4f69fbead9.png";
+document.getElementById('myDino').width = 100;
+document.getElementById('myDino').style.right = '70%';
+setTimeout(() => {
+let myBase = parseInt(document.getElementById('myDino').style.top)
+console.log()
+myNewBase = myBase - 8
+document.getElementById('myDino').style.top = myNewBase + 'px'
+}, 3 * i)
+}
+setTimeout(() => {
+for (let i=0;i<200;i++) {
+if (myDB === false) {
+return
+}
+myCK = false;
+document.getElementById('myDino').src = "https://i.pinimg.com/originals/46/03/85/4603853b0ce78e7cd43f4d4f69fbead9.png";
+document.getElementById('myDino').width = 100;
+document.getElementById('myDino').style.right = '70%';
+clearInterval(myInterval)
+setTimeout(() => {
+let myBase = parseInt(document.getElementById('myDino').style.top)
+myNewBase = myBase + 0.5
+document.getElementById('myDino').style.top = myNewBase + 'px'
+}, 3 * i)
+}
+}, 450)
+setTimeout(() => {
+for (let i=0;i<140;i++) {
+if (myDB === false) {
+return
+}
+myCK = false;
+document.getElementById('myDino').src = "https://i.pinimg.com/originals/46/03/85/4603853b0ce78e7cd43f4d4f69fbead9.png";
+document.getElementById('myDino').width = 100;
+document.getElementById('myDino').style.right = '70%';
+clearInterval(myInterval)
+setTimeout(() => {
+let myBase = parseInt(document.getElementById('myDino').style.top)
+myNewBase = myBase + 2
+document.getElementById('myDino').style.top = myNewBase + 'px'
+}, 3 * i)
+}
+}, 450 + 40)
+setTimeout(() => {
+jumping = false
+myDN()
+}, 491)
+setTimeout(() => {
+myCK = true;
+},750)
+}
+document.addEventListener('keydown', function(myKeyPressD) {
+if (myKeyPressD.code === 'ArrowDown') {
+myDown()
+}
+})
+function myDown() {
+let dino = document.getElementById('myDino');
+let currentTop = parseInt(dino.style.top) || 430;
+let ground = 430;
+let myDownINT = setInterval(() => {
+currentTop += 8; // move down
+dino.style.top = currentTop + 'px';
+if (currentTop >= ground) {
+clearInterval(myDownINT);  
+dino.style.top = ground + 'px'; 
+myDB = true;
+}
+}, 5);
+}
+setInterval(() => {
+if (parseInt(document.getElementById('myDino').style.top) >= 430)
+document.getElementById('myDino').style.top = '430px';
+}, 5)
+}
+</script>
+
