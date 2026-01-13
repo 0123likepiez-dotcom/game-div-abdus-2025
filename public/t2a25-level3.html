@@ -1,0 +1,398 @@
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+
+</head>
+<body style="background-color: gray;">
+<h6 style="color: white; font-size: 80%; font-family:'AudioWide'; ">LEVEL 3</h6>
+<div style="background-color: rgb(23, 25, 46); width: 30%; height: 90%; top: 50%; right: 50%; transform: translate(50%, -50%); display: flex; justify-content: center; align-items: center; position: absolute; border: 3px solid rgb(0, 0, 0); padding: 20px;">
+    <div class="mySurf" style=" width: 20%; height: 2%; background-color:rgb(174, 190, 204); position: absolute; top: 90%; right: 20%;"></div>
+    <div class="mySurf" style=" width: 20%; height: 2%; background-color:rgb(174, 190, 204); position: absolute; top: 75%; right: 40%;"></div>
+    <div class="mySurf" style=" width: 20%; height: 2%; background-color:rgb(174, 190, 204); position: absolute; top: 40%; right: 10%;"></div>
+    <div class="mySurf" style=" width: 20%; height: 2%; background-color:rgb(174, 190, 204); position: absolute; top: 60%; right: 20%;"></div>
+    <div class="mySurf" style=" width: 20%; height: 2%; background-color:rgb(174, 190, 204); position: absolute; top: 70%; right: 75%;"></div>
+    <div class="mySurf" style=" width: 20%; height: 2%; background-color:rgb(174, 190, 204); position: absolute; top: 30%; right: 55%;"></div>
+    <div class="mySurf" style=" width: 20%; height: 2%; background-color:rgb(174, 190, 204); position: absolute; top: 15%; right: 38%; display: flex; justify-content: center; align-items: center;">
+        <div id="myEnd" style="width: 35%; height: 300%; background-color:aliceblue; border-top-left-radius: 35%; border-top-right-radius: 35%; position: absolute; top: -300%;"></div>  
+    </div>
+    <div class="mySurf" style=" width: 20%; height: 2%; background-color:rgb(174, 190, 204); position: absolute; top: 55%; right: 55%;"></div>
+    <div id="myChar" style="width: 7%; height: 5%; background-color: blue; position: absolute; top: 97%; left: 50%; transform: translate(-50%, -50%);"></div>
+</div>
+<div id="myTimer" style="font-family: 'Audiowide'; font-size: 120%; color: white; position: absolute; background-color:rgb(20, 20, 20); width: 25%; height: 10%; text-align: center; display: flex; justify-content: center; align-items: center; border-radius: 5px; border: 3px solid black; right: 7%; top: 2%; overflow: none;">Run Time:<br>N/A</div>
+<div id="myWinSc" style=" opacity: 100%; width: 100%; height: 100%; background-color:rgba(0, 0, 0, 0.945); position: absolute; display: flex; justify-content: center; align-items: center; top: 50%; right: 50%; transform: translate(50%, -50%);">
+<div style="position: absolute; width: 70%; display: flex; top: 0%;">
+<img class="Spinning" src="https://cdn4.iconfinder.com/data/icons/medical-health-care-2-1/256/Atom-1024.png" style="position: absolute; top: 20%; left: 30%; width: 12%; z-index: 2;">
+<p class="myBanner">8Bit Platformer</p>
+</div>
+<div id="mySB" style=" opacity: 100%; width: 30%; height: 30%; background-color: rgb(14, 14, 14); border-radius: 15px; border: 15px solid rgb(20, 20, 20); display: flex; justify-content: center;">
+<p style="font-family: 'Audiowide'; font-size: 120%; color: white; position: absolute;">Congratulations on Making it to the Final Level!</p>
+<button class="myStart" id="myStart" onclick="myStart()" style="font-family: AudioWide; border: none; width: 25%; height: 15%; color: white; position: relative; top: 40%; font-size: 130%; cursor: pointer;">START</button>
+<div id="myAn" style="width: 1.5%; height: 3%; background-color: blue; position: absolute; top: 60%; transform: translate(50%, 0%);"></div>
+</div>
+</div>
+<div id="myEB" style=" position: absolute; opacity: 100%; width: 30%; height: 30%; background-color: rgb(14, 14, 14); border-radius: 15px; border: 15px solid rgb(20, 20, 20); display: flex; justify-content: center; top: -50%; right: 50%; transform: translate(50%,-50%);">
+<p style="font-family: 'Audiowide'; font-size: 120%; color: white; position: absolute;">Level Completed!</p>
+<p style="font-family: 'Audiowide'; font-size: 150%; color: white; position: absolute; writing-mode: vertical-rl; text-orientation: upright; right: 15%; top: 10%; background-color:rgb(0, 0, 0); padding: 0.1%; border-radius: 3%;">THANKS</p>
+<p style="font-family: 'Audiowide'; font-size: 150%; color: white; position: absolute; writing-mode: vertical-rl; text-orientation: upright; right: 7.5%; top: 10%; background-color:rgb(0, 0, 0); padding: 0.1%; border-radius: 3%;">FOR</p>
+<p style="font-family: 'Audiowide'; font-size: 150%; color: white; position: absolute; writing-mode: vertical-rl; text-orientation: upright; right: 0%; top: 10%; background-color:rgb(0, 0, 0); padding: 0.1%; border-radius: 3%;">PLAYING</p>
+<button class="myStart" id="myStart" onclick="myRetry()" style="font-family: AudioWide; border: none; width: 25%; height: 15%; color: white; position: absolute; top: 35%; right: 50%; transform: translate(50%, 0%); font-size: 130%; cursor: pointer;">RETRY</button>
+<button class="myStart" id="myGoB" onclick="myGoB()" style="font-family: AudioWide; border: none; width: 25%; height: 15%; color: white; position: absolute; top: 55%; right: 50%; transform: translate(50%, 0%);font-size: 130%; cursor: pointer;">LEVEL-1</button>
+<div id="myTimeSave" style="white-space: nowrap; overflow-y: auto; overflow-x: hidden; font-family: 'Audiowide'; font-size: 120%; color: white; position: absolute; background-color:rgb(20, 20, 20); width: 25%; height: 80%; text-align: center; display: flex; justify-content: center; align-items: center; border-radius: 5px; border: 3px solid black; left: 2%; top: 9%; overflow: none;">Time:<br></div>
+</div>
+<div id="myCB" style=" position: absolute; opacity: 100%; width: 25%; height: 15%; background-color: rgb(10, 10, 10); border-radius: 5px;display: flex; justify-content: center; top: -50%; right: 50%; transform: translate(50%,-50%);">
+<p style="font-family: 'Audiowide'; font-size: 150%; color: white; position: absolute; left: 50%; top: 0%; transform: translate(-50%,-50%); background-color:rgb(0, 0, 0); padding: 0.5%; border-radius: 3%;">ARE YOU SURE?</p>
+<button class="myStart" id="myGoB" onclick="myNO()" style="font-family: AudioWide; border: none; width: 25%; height: 30%; color: white; position: absolute; top: 52%; margin-right: 30%; font-size: 130%; cursor: pointer;">NO</button>
+<button class="myStart" id="myGoB" onclick="myYES()" style="font-family: AudioWide; border: none; width: 25%; height: 30%; color: white; position: absolute; top: 52%;  margin-left: 30%; font-size: 130%; cursor: pointer;">YES</button>
+</div>
+</div>
+<style>
+ #myTimeSave::-webkit-scrollbar {
+    width: 10px;
+}
+
+#myTimeSave::-webkit-scrollbar-track {
+    background: rgb(20, 20, 20); 
+    border-left: 1px solid #444;
+}
+#myTimeSave::-webkit-scrollbar-thumb {
+    background: rgb(255, 94, 0);
+    border: 2px solid rgb(20, 20, 20); 
+    border-radius: 20px;
+}
+#myTimeSave::-webkit-scrollbar-thumb:hover {
+    background: rgb(153, 73, 27);
+    cursor: pointer;
+}
+
+.myStart {
+background-color: black;
+transition: 0.25s;   
+}
+.myStart:hover {
+transition: 0.3s;
+background-color:rgb(199, 35, 35);
+}
+.animate-out {
+    animation: myStartx 500ms forwards;
+}
+@keyframes myStartx{
+0%   {opacity: 100%;}
+100% {opacity: 0%;}
+}
+.animate-in {
+    animation: myStartxy 500ms forwards !important;
+}
+@keyframes myStartxy{
+0%   {opacity: 0%;}
+100% {opacity: 100%;}
+}
+
+.myBanner {
+position: absolute; 
+top: -52%; 
+font-family:'Audiowide', Arial, Helvetica, sans-serif; 
+font-size: 400%; 
+color: rgb(255, 94, 0); 
+left: 42%;
+transform: translate(0%, -20%);
+z-index: 1;
+}
+.myBanner:after {   
+content: "";
+animation: myGlow 5s ease-in-out infinite;
+top: -45%;
+left: -62%;
+position: absolute;
+background-color: rgb(248, 82, 5);
+width: 200%;
+height: 150%; 
+filter: blur(100px);  
+z-index: -1; 
+}
+@keyframes myGlow{
+0%   {background-color: rgba(255, 77, 0, 0.885);}
+50%  {background-color: rgb(126, 36, 1);}
+100% {background-color: rgb(255, 77, 0, 0.885);}   
+
+
+}
+
+.Spinning {   
+animation: mySpin 4s linear infinite;
+}
+@keyframes mySpin{
+ 
+  0%    {transform: rotate(0deg);}
+
+  12.5% {transform: rotate(36deg);}
+ 
+  25%   {transform: rotate(82deg);}
+
+  37.5% {transform: rotate(128deg);}
+  
+  50%   {transform: rotate(174deg);}
+ 
+  62.5% {transform: rotate(220deg);}
+
+  75%   {transform: rotate(266deg);}
+ 
+  87.5% {transform: rotate(312deg);}
+
+  100%  {transform: rotate(360deg);}
+
+}
+</style>
+
+<script>
+const winScreen = document.getElementById("myWinSc");   
+const char = document.getElementById("myChar");
+const surfs = document.querySelectorAll(".mySurf");
+const myEnd = document.getElementById("myEnd")
+const myAn = document.getElementById("myAn")
+
+let myWin = false;
+let currentX = 50;
+let tempY = 97;
+let jumpVelocity = 0;
+let isJumping = false;
+let localGrav = 0.12;
+let myGOB = false;
+let myRight = false;
+let myLeft = false;
+
+let currentKey = {
+    ArrowRight: false,
+    ArrowLeft: false,
+    ArrowUp: false
+};
+
+setInterval(() =>{
+if(currentX <= 3.61) {
+myLeft = true;  
+} else {myLeft = false; console.log(currentX)}   
+}, 50);
+setInterval(() =>{
+if(currentX >= 96.39999999) {
+myRight = true;  
+} else {myRight = false; console.log(currentX)}   
+}, 50);
+
+function checkCollision(a, b) {
+    let aRect = a.getBoundingClientRect();
+    let bRect = b.getBoundingClientRect();
+    return !(
+        aRect.bottom < bRect.top ||
+        aRect.top > bRect.bottom + 100||
+        aRect.right < bRect.left ||
+        aRect.left > bRect.right
+    );
+}
+function checkCollision2(a, b) {
+    let aRect = a.getBoundingClientRect();
+    let bRect = b.getBoundingClientRect();
+    return !(
+        aRect.bottom < bRect.top ||
+        aRect.top > bRect.bottom ||
+        aRect.right < bRect.left ||
+        aRect.left > bRect.right
+    );
+}
+addEventListener("keydown", event => {
+    if (event.key in currentKey) currentKey[event.key] = true;
+});
+
+addEventListener("keyup", event => {
+    if (event.key in currentKey) currentKey[event.key] = false;
+});
+
+setInterval(() => {
+    if (currentKey.ArrowRight && !myWin && !myRight) currentX += 0.8;
+    if (currentKey.ArrowLeft && !myWin && !myLeft) currentX -= 0.8;
+    char.style.left = currentX + "%";
+}, 15);
+
+setInterval(() => {
+    jumpVelocity += localGrav;
+    tempY += jumpVelocity;
+
+    let onPlatform = false;
+    let cRect = char.parentElement.getBoundingClientRect();
+
+    for (let i = 0; i < surfs.length; i++) {
+        let sRect = surfs[i].getBoundingClientRect();
+
+        if (checkCollision(char, surfs[i])) {
+            let charMid = char.getBoundingClientRect().top + (char.getBoundingClientRect().height / 2);
+            let surfMid = sRect.top + (sRect.height / 2);
+
+            if (jumpVelocity >= 0 && charMid < surfMid) {
+                let platformTopPercent = ((sRect.top - cRect.top) / cRect.height) * 100;
+                tempY = platformTopPercent - 2.5; 
+                jumpVelocity = 0;
+                onPlatform = true;
+                isJumping = false;
+            } 
+            else if (jumpVelocity < 0 && charMid > surfMid) {
+                let platformBottomPercent = ((sRect.bottom - cRect.top) / cRect.height) * 99;
+                tempY = platformBottomPercent + 4; 
+                jumpVelocity = 0; 
+            }
+        }
+    }
+
+    if (tempY >= 97) {
+        tempY = 97;
+        jumpVelocity = 0;
+        onPlatform = true;
+        isJumping = false;
+    }
+
+    if (currentKey.ArrowUp && onPlatform && !isJumping && !myWin) {
+        jumpVelocity = -2;
+        isJumping = true;
+        onPlatform = false;
+    }
+
+    char.style.top = tempY + "%";
+}, 20);
+let myWCheck;
+function myW(){
+myWCheck = setInterval (() => {
+if (!myWin && checkCollision2(char, myEnd)) {
+clearInterval(myT)
+clearTimeout(retryTimeout)
+document.getElementById("myTimeSave").innerHTML += min + " : " + s + " : " + ms + "<br>";
+document.getElementById("myTimer").innerHTML = min + ":" + s + ":" + ms
+document.getElementById("myTimer").style.top = "33.5%";
+document.getElementById("myTimer").style.zIndex = "5";
+document.getElementById("myEB").style.top = '50%';
+document.getElementById("myEB").style.opacity = "100%";   
+let startBoard = document.getElementById("mySB");
+            if (startBoard) {
+                startBoard.remove();
+            }
+winScreen.style.display = "flex";
+myWin = true;
+winScreen.classList.remove("animate-out");
+winScreen.classList.add("animate-in");
+}
+if(myWin === true) {
+clearInterval(myWCheck)
+}
+}, 50)
+}
+myW()
+let myXInc = 0;
+let myXCount = 1;
+let myXTurn = 1;
+let myYPos = 0;
+let myYDec = -0.5;
+let myYGrav = 0.02041; 
+setInterval(() => {
+if (myXTurn === 1) {
+myXCount++    
+myXInc += 0.1
+myYPos += myYDec
+myYDec += myYGrav
+if (myXCount === 50) {
+myXTurn = -1;
+myXCount = 0;
+myYPos = 0;
+myYDec = -0.5;
+}
+} else if (myXTurn === -1) {
+myXCount++
+myXInc -= 0.1
+myYPos += myYDec
+myYDec += myYGrav 
+if (myXCount === 50) {
+myXTurn = 1   
+myXCount = 0;
+myYPos = 0;
+myYDec = -0.5;
+} 
+}
+myAn.style.left = (myXInc + 46) + "%";
+myAn.style.top = (myYPos + 60) + "%";
+}, 20)
+function myStart() {
+myTimer()
+winScreen.classList.add("animate-out");
+setTimeout(() => {
+        winScreen.style.display = "none";
+    }, 1000);
+}
+let ms = 0;
+let s = 0;
+let min = 0;
+function myTimer () {
+setInterval(() => {
+ms++
+console.log("ms: "+s)
+if (ms >= 999) {
+ms = 0;   
+}
+}, 1)   
+setInterval(() => {
+s++
+console.log("secs: "+s)
+if (s >= 59) {
+s = 0;   
+}
+}, 1000)
+setInterval(() => {
+min++
+console.log("mins: "+min)
+}, 60000) 
+}
+let myT; 
+function myTT() { 
+myT = setInterval(() => {
+document.getElementById("myTimer").innerHTML = "Run Time:" + "<br>" + min + " : " + s + " : " + ms;   
+}, 25);
+}
+myTT()
+let retryTimeout;
+function myRetry() {
+if (myGOB === false) {    
+myW();
+myTT(); 
+const endBoard = document.getElementById("myEB");
+endBoard.style.opacity = "0%";
+endBoard.style.top = "-50%";
+winScreen.classList.remove("animate-in");
+winScreen.classList.add("animate-out");
+min = 0;
+s = 0;
+ms = 0;
+document.getElementById("myTimer").innerHTML = min + ":" + s + ":" + ms
+    myWin = false;
+    currentX = 50;
+    tempY = 97;
+    jumpVelocity = 0;
+    isJumping = false;
+    
+char.style.left = currentX + "%";
+char.style.top = tempY + "%";
+
+document.getElementById("myTimer").style.top = "2%";
+    
+    retryTimeout = setTimeout(() => {
+        if (!myWin) winScreen.style.display = "none";
+    }, 500);
+}
+}
+function myGoB() {
+myGOB = true
+document.getElementById("myCB").style.top = "77%";   
+}
+function myNO() {
+document.getElementById("myCB").style.top = "-50%";
+myGOB = false;    
+}
+function myYES() {
+window.location = "https://0123likepiez-dotcom.github.io/game-div-abdus-2025/public/t2a25-level1.html"; 
+}
+
+</script>
