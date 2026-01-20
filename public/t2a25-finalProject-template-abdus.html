@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>t2a25-final-project-template</title>
+    <style>
+        body { background: #111; display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh; margin: 0; color: white; font-family: sans-serif; }
+        #game-board { position: relative; width: 800px; height: 800px; background: #000; outline: 5px solid #444; }
+        .wall { position: absolute; background: white; }
+        #goal { 
+            position: absolute; background: rgb(0, 119, 255); width: 30px; height: 30px; border-radius: 50%;
+            left: 725px; top: 725px; box-shadow: 0 0 15px rgb(0, 119, 255);
+        }
+        #player { 
+            position: absolute; background: #0077ff; width: 30px; height: 30px; 
+            left: 45px; top: 45px; z-index: 10;
+        }
+    </style>
+</head>
+<body>
+
+    <h2 style="margin-bottom: 10px;">t2a25-final-project-template-abdus</h2>
+    <div id="game-board">
+        <div id="player"></div>
+        <div id="goal"></div>
+
+        <div class="wall" style="left:0; top:0; width:800px; height:40px;"></div>
+        <div class="wall" style="left:0; top:760px; width:800px; height:40px;"></div>
+        <div class="wall" style="left:0; top:40px; width:40px; height:720px;"></div>
+        <div class="wall" style="left:760px; top:40px; width:40px; height:720px;"></div>
+
+        <div class="wall" style="left:120px; top:40px; width:40px; height:240px;"></div>
+        <div class="wall" style="left:120px; top:360px; width:40px; height:400px;"></div>
+        
+        <div class="wall" style="left:240px; top:120px; width:40px; height:320px;"></div>
+        <div class="wall" style="left:240px; top:520px; width:40px; height:240px;"></div>
+
+        <div class="wall" style="left:360px; top:40px; width:40px; height:120px;"></div>
+        <div class="wall" style="left:360px; top:240px; width:40px; height:360px;"></div>
+        <div class="wall" style="left:360px; top:680px; width:40px; height:80px;"></div>
+
+        <div class="wall" style="left:480px; top:120px; width:40px; height:520px;"></div>
+
+        <div class="wall" style="left:600px; top:40px; width:40px; height:400px;"></div>
+        <div class="wall" style="left:600px; top:520px; width:40px; height:240px;"></div>
+
+        <div class="wall" style="left:40px; top:480px; width:40px; height:40px;"></div>
+        <div class="wall" style="left:160px; top:120px; width:40px; height:40px;"></div>
+        <div class="wall" style="left:160px; top:600px; width:40px; height:40px;"></div>
+        <div class="wall" style="left:280px; top:240px; width:40px; height:40px;"></div>
+        <div class="wall" style="left:400px; top:120px; width:40px; height:40px;"></div>
+        <div class="wall" style="left:400px; top:520px; width:40px; height:40px;"></div>
+        <div class="wall" style="left:520px; top:320px; width:40px; height:40px;"></div>
+        <div class="wall" style="left:640px; top:120px; width:80px; height:40px;"></div>
+        <div class="wall" style="left:640px; top:600px; width:40px; height:40px;"></div>
+    </div>
+
+<script>
+const myPlayer = document.getElementById("player");
+const myWalls = document.querySelectorAll(".wall");
+const myGoal = document.getElementById("goal");
+const myStep = 40;
+
+window.addEventListener("keydown", (myEvent) => {
+    if(["ArrowUp","ArrowDown","ArrowLeft","ArrowRight"].includes(myEvent.key)) myEvent.preventDefault();
+
+    let myNewLeft = myPlayer.offsetLeft;
+    let myNewTop = myPlayer.offsetTop;
+
+    if (myEvent.key === "ArrowUp") myNewTop -= myStep;
+    if (myEvent.key === "ArrowDown") myNewTop += myStep;
+    if (myEvent.key === "ArrowLeft") myNewLeft -= myStep;
+    if (myEvent.key === "ArrowRight") myNewLeft += myStep;
+
+
+    if (myNewLeft < 0 || myNewLeft > 760 || myNewTop < 0 || myNewTop > 760) return;
+
+    let myHitWall = false;
+    myWalls.forEach(myWall => {
+        if (myNewLeft < myWall.offsetLeft + myWall.offsetWidth - 2 &&
+            myNewLeft + myPlayer.offsetWidth > myWall.offsetLeft + 2 &&
+            myNewTop < myWall.offsetTop + myWall.offsetHeight - 2 &&
+            myNewTop + myPlayer.offsetHeight > myWall.offsetTop + 2) {
+            myHitWall = true;
+        }
+    });
+
+    if (!myHitWall) {
+        myPlayer.style.left = myNewLeft + "px";
+        myPlayer.style.top = myNewTop + "px";
+    }
+
+    if (Math.abs(myNewLeft - myGoal.offsetLeft) < 10 && Math.abs(myNewTop - myGoal.offsetTop) < 10) {
+        setTimeout(() => {
+            window.location = "https://0123likepiez-dotcom.github.io/game-div-abdus-2025/public/t2a25-level1.html";
+        }, 50);
+    }
+});
+</script>
+</body>
+</html>
